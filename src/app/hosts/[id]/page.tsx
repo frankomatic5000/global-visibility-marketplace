@@ -1,14 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter, useParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { sampleUsers, sampleMediaProfiles, sampleListings, sampleRegions } from '@/data/sample-data';
-import { formatPrice, formatDate } from '@/lib/utils';
+import { sampleUsers, sampleMediaProfiles, sampleListings } from '@/data/sample-data';
+import { formatDate } from '@/lib/utils';
 import ListingCard from '@/components/ListingCard';
 
 export default function HostProfilePage() {
-  const router = useRouter();
   const params = useParams();
   const hostId = params.id as string;
 

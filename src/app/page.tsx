@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { sampleRegions, sampleListings } from '@/data/sample-data';
-import { formatPrice } from '@/lib/utils';
 import ListingCard from '@/components/ListingCard';
 
 export default function LandingPage() {

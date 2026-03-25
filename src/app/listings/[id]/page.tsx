@@ -1,13 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter, useParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { sampleListings, sampleRegions, sampleUsers, sampleMediaProfiles, getCountryAndCity } from '@/data/sample-data';
+import { sampleListings, sampleUsers, sampleMediaProfiles, getCountryAndCity } from '@/data/sample-data';
 import { formatPrice, getListingTypeLabel, formatDate } from '@/lib/utils';
 
 export default function ListingDetailPage() {
-  const router = useRouter();
   const params = useParams();
   const listingId = params.id as string;
 

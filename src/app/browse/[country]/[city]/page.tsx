@@ -1,13 +1,12 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { useRouter, useParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { sampleRegions, sampleListings } from '@/data/sample-data';
 import ListingCard from '@/components/ListingCard';
 
 export default function CityBrowsePage() {
-  const router = useRouter();
   const params = useParams();
   
   const countrySlug = params.country as string;

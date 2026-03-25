@@ -1,56 +1,57 @@
 'use client';
 
 import Link from 'next/link';
-import { Listing } from '@/types';
-import { formatPrice, getListingTypeLabel } from '@/lib/utils';
+import Image from 'next/image';
+import { formatPrice } from '@/lib/utils';
 import { sampleRegions, sampleUsers, getCountryAndCity } from '@/data/sample-data';
+import type { ListingCardProps } from '@/types';
 
-interface ListingCardProps {
-  listing: Listing;
-}
-
-export default function ListingCard({ listing }: ListingCardProps) {
-  const region = sampleRegions.find(r => r.id === listing.region_id);
+export default function ListingCard({ listing, priority = false }: ListingCardProps) {
+  const region = sampleRegions.find((r) => r.id === listing.region_id);
   const location = getCountryAndCity(listing.region_id);
-  const host = sampleUsers.find(u => u.id === listing.host_id);
+  const host = sampleUsers.find((u) => u.id === listing.host_id);
 
   return (
-    <Link href={`/listings/${listing.id}`}>
-      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full flex flex-col">
-        {/* Cover image */}
-        <div className="relative h-48 bg-gray-200">
+    <Link href={`/listings/${listing.id}`} className="group block h-full">
+      <article className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full flex flex-col">
+        {/* Cover image with Next.js Image optimization */}
+        <div className="relative h-48 bg-gray-200 overflow-hidden">
           {listing.cover_image_url ? (
-            <img
+            <Image
               src={listing.cover_image_url}
               alt={listing.title}
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              priority={priority}
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-4xl">
+            <div className="w-full h-full flex items-center justify-center text-4xl bg-gradient-to-br from-blue-100 to-blue-200">
               🎙️
             </div>
           )}
           {listing.is_featured && (
-            <span className="absolute top-3 left-3 bg-yellow-400 text-yellow-900 text-xs font-semibold px-2 py-1 rounded-full">
+            <span className="absolute top-3 left-3 bg-yellow-400 text-yellow-900 text-xs font-semibold px-2 py-1 rounded-full shadow-sm">
               Featured
             </span>
           )}
+          {/* Platform type badge */}
+          <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-medium px-2 py-1 rounded-full capitalize">
+            {listing.platform_type}
+          </span>
         </div>
 
         {/* Content */}
         <div className="p-5 flex-1 flex flex-col">
-          {/* Platform type badge */}
+          {/* Listing type badge */}
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-medium text-blue-600 uppercase tracking-wide">
-              {listing.platform_type}
-            </span>
-            <span className="text-xs text-gray-500">
-              {getListingTypeLabel(listing.listing_type)}
+              {listing.listing_type.replace('_', ' ')}
             </span>
           </div>
 
           {/* Title */}
-          <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+          <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
             {listing.title}
           </h3>
 
@@ -61,7 +62,25 @@ export default function ListingCard({ listing }: ListingCardProps) {
 
           {/* Location */}
           <div className="flex items-center text-sm text-gray-500 mb-4">
-            <span className="mr-1">📍</span>
+            <svg
+              className="w-4 h-4 mr-1 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
             {location ? `${location.city}, ${location.country}` : region?.name}
           </div>
 
@@ -70,9 +89,11 @@ export default function ListingCard({ listing }: ListingCardProps) {
             {/* Host info */}
             <div className="flex items-center mb-4">
               {host?.avatar_url ? (
-                <img
+                <Image
                   src={host.avatar_url}
                   alt={host.full_name || ''}
+                  width={32}
+                  height={32}
                   className="w-8 h-8 rounded-full mr-3"
                 />
               ) : (
@@ -103,7 +124,7 @@ export default function ListingCard({ listing }: ListingCardProps) {
             </div>
           </div>
         </div>
-      </div>
+      </article>
     </Link>
   );
 }

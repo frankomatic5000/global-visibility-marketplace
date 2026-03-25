@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter, useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { sampleListings, sampleRegions, sampleUsers, getCountryAndCity } from '@/data/sample-data';
+import { sampleListings, sampleUsers, getCountryAndCity } from '@/data/sample-data';
 import { formatPrice } from '@/lib/utils';
 
 export default function CheckoutPage() {
