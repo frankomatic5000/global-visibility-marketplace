@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <!-- Soft gradient for the background -->
+    <linearGradient id="softBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFBFC;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F0F4F8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8EEF4;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Very soft blue for geometric shapes -->
+    <linearGradient id="softBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A8C5E8;stop-opacity:0.06" />
+      <stop offset="100%" style="stop-color:#7BA3D9;stop-opacity:0.04" />
+    </linearGradient>
+    
+    <!-- Soft gold accent -->
+    <linearGradient id="softGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5D89A;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#E8C97A;stop-opacity:0.03" />
+    </linearGradient>
+    
+    <!-- Large circle pattern -->
+    <pattern id="largeCircles" x="0" y="0" width="400" height="400" patternUnits="userSpaceOnUse">
+      <circle cx="200" cy="200" r="180" fill="url(#softBlue)" />
+      <circle cx="0" cy="0" r="150" fill="url(#softGold)" />
+      <circle cx="400" cy="0" r="120" fill="url(#softBlue)" />
+      <circle cx="0" cy="400" r="140" fill="url(#softBlue)" />
+      <circle cx="400" cy="400" r="100" fill="url(#softGold)" />
+    </pattern>
+    
+    <!-- Subtle mosaic tiles -->
+    <pattern id="mosaicTiles" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+      <!-- Large geometric shapes inspired by Athos Bulcão -->
+      <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#softBlue)" />
+      <path d="M100,0 L200,0 L200,100 L100,100 Z" fill="url(#softGold)" />
+      <path d="M0,100 L100,100 L50,200 Z" fill="url(#softGold)" />
+      <path d="M100,100 L200,100 L200,200 L100,200 Z" fill="url(#softBlue)" />
+      <path d="M50,200 L100,100 L150,200 Z" fill="url(#softBlue)" opacity="0.5" />
+    </pattern>
+    
+    <!-- Soft wave lines -->
+    <pattern id="softWaves" x="0" y="0" width="300" height="150" patternUnits="userSpaceOnUse">
+      <path d="M0,75 Q75,25 150,75 T300,75" stroke="url(#softBlue)" stroke-width="1" fill="none" opacity="0.3"/>
+      <path d="M0,100 Q75,50 150,100 T300,100" stroke="url(#softGold)" stroke-width="0.5" fill="none" opacity="0.2"/>
+    </pattern>
+  </defs>
+  
+  <!-- Base background -->
+  <rect width="1200" height="800" fill="url(#softBg)" />
+  
+  <!-- Layer 1: Very large, soft circles (ultra subtle) -->
+  <g opacity="0.4">
+    <circle cx="200" cy="200" r="300" fill="url(#softBlue)" />
+    <circle cx="1000" cy="600" r="250" fill="url(#softGold)" />
+    <circle cx="600" cy="100" r="200" fill="url(#softBlue)" opacity="0.6" />
+  </g>
+  
+  <!-- Layer 2: Large mosaic tiles (low opacity) -->
+  <g opacity="0.5">
+    <rect x="0" y="0" width="1200" height="800" fill="url(#mosaicTiles)" />
+  </g>
+  
+  <!-- Layer 3: Subtle wave texture -->
+  <g opacity="0.3">
+    <rect x="0" y="0" width="1200" height="800" fill="url(#softWaves)" />
+  </g>
+  
+  <!-- Layer 4: Very soft radiating lines from corners (Athos-inspired) -->
+  <g opacity="0.15" stroke="url(#softBlue)" stroke-width="0.5" fill="none">
+    <!-- From top-left -->
+    <line x1="0" y1="0" x2="400" y2="100" />
+    <line x1="0" y1="0" x2="300" y2="200" />
+    <line x1="0" y1="0" x2="200" y2="300" />
+    <line x1="0" y1="0" x2="100" y2="400" />
+    
+    <!-- From bottom-right -->
+    <line x1="1200" y1="800" x2="800" y2="700" />
+    <line x1="1200" y1="800" x2="900" y2="600" />
+    <line x1="1200" y1="800" x2="1000" y2="500" />
+    <line x1="1200" y1="800" x2="1100" y2="400" />
+    
+    <!-- From top-right -->
+    <line x1="1200" y1="0" x2="800" y2="100" />
+    <line x1="1200" y1="0" x2="900" y2="200" />
+    
+    <!-- From bottom-left -->
+    <line x1="0" y1="800" x2="400" y2="700" />
+    <line x1="0" y1="800" x2="300" y2="600" />
+  </g>
+  
+  <!-- Layer 5: Soft gold accent dots (Bulcão style) -->
+  <g opacity="0.2">
+    <circle cx="300" cy="200" r="4" fill="#F5D89A" />
+    <circle cx="900" cy="600" r="6" fill="#F5D89A" />
+    <circle cx="600" cy="400" r="3" fill="#7BA3D9" />
+    <circle cx="150" cy="600" r="5" fill="#F5D89A" />
+    <circle cx="1050" cy="200" r="4" fill="#7BA3D9" />
+  </g>
+  
+  <!-- Gradient overlay to ensure text readability -->
+  <defs>
+    <linearGradient id="textProtection" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.3" />
+      <stop offset="40%" style="stop-color:#FFFFFF;stop-opacity:0.1" />
+      <stop offset="60%" style="stop-color:#FFFFFF;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.4" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#textProtection)" />
+</svg>

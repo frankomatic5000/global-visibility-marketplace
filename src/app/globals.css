@@ -163,7 +163,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: 
+  background:
     repeating-conic-gradient(
       from 180deg at 70% 60%,
       transparent 0deg 20deg,
@@ -171,6 +171,63 @@ body {
       transparent 22deg 40deg
     );
   opacity: 0.7;
+}
+
+/* Pattern: Elegant Hero — Soft, subtle, text-readable (Athos-inspired) */
+.pattern-athos-hero-elegant {
+  background-color: #FAFBFC;
+  background-image:
+    /* Large soft circles */
+    radial-gradient(ellipse 600px 600px at 15% 25%, rgba(168, 197, 232, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 85% 75%, rgba(245, 216, 154, 0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 400px at 50% 10%, rgba(123, 163, 217, 0.04) 0%, transparent 70%),
+    /* Subtle mosaic tile pattern */
+    linear-gradient(135deg, transparent 48%, rgba(168, 197, 232, 0.03) 49%, rgba(168, 197, 232, 0.03) 51%, transparent 52%),
+    linear-gradient(225deg, transparent 48%, rgba(245, 216, 154, 0.02) 49%, rgba(245, 216, 154, 0.02) 51%, transparent 52%),
+    /* Very soft wave lines */
+    repeating-linear-gradient(
+      100deg,
+      transparent,
+      transparent 100px,
+      rgba(168, 197, 232, 0.015) 100px,
+      rgba(168, 197, 232, 0.015) 200px
+    ),
+    /* Base subtle gradient */
+    linear-gradient(135deg, #FAFBFC 0%, #F0F4F8 50%, #E8EEF4 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 200px 200px, 200px 200px, 100% 100%, 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Text protection overlay for elegant hero */
+.pattern-athos-hero-elegant::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 40%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Accent dots for Bulcão DNA */
+.pattern-athos-hero-elegant::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle 4px at 25% 25%, rgba(245, 216, 154, 0.15) 100%, transparent 100%),
+    radial-gradient(circle 6px at 75% 75%, rgba(245, 216, 154, 0.12) 100%, transparent 100%),
+    radial-gradient(circle 3px at 50% 50%, rgba(123, 163, 217, 0.12) 100%, transparent 100%),
+    radial-gradient(circle 5px at 12% 75%, rgba(245, 216, 154, 0.1) 100%, transparent 100%),
+    radial-gradient(circle 4px at 88% 25%, rgba(123, 163, 217, 0.1) 100%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* Pattern: Mosaic — Footer */

@@ -41,8 +41,8 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-athos-snow">
-      {/* Hero Section — Athos Radiate Pattern */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 pattern-athos-radiate">
+      {/* Hero Section — Athos Elegant Pattern (soft, readable) */}
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 pattern-athos-hero-elegant">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-athos-navy mb-6 font-[family-name:var(--font-playfair)]">
             Book Visibility
