@@ -2,11 +2,30 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { MapPin } from 'lucide-react';
 import { formatPrice } from '@/lib/utils';
+import { formatDistance } from '@/lib/distance';
 import { sampleRegions, sampleUsers, getCountryAndCity } from '@/data/sample-data';
-import type { ListingCardProps } from '@/types';
+import type { Listing } from '@/types';
 
-export default function ListingCard({ listing, priority = false }: ListingCardProps) {
+export interface ListingCardProps {
+  listing: Listing;
+  priority?: boolean; // for above-fold images
+  distance?: number | null; // distance in km
+}
+
+/**
+ * Listing Card Component
+ * Displays listing information with optional distance badge
+ * 
+ * Sunset Velocity styling:
+ * - Distance badge: Golden (#FFC233)
+ */
+export default function ListingCard({ 
+  listing, 
+  priority = false,
+  distance = null,
+}: ListingCardProps) {
   const region = sampleRegions.find((r) => r.id === listing.region_id);
   const location = getCountryAndCity(listing.region_id);
   const host = sampleUsers.find((u) => u.id === listing.host_id);
@@ -30,13 +49,24 @@ export default function ListingCard({ listing, priority = false }: ListingCardPr
               🎙️
             </div>
           )}
+          
+          {/* Featured badge */}
           {listing.is_featured && (
             <span className="absolute top-3 left-3 bg-[#FFC233] text-[#1A1A2E] text-xs font-semibold px-2 py-1 rounded-full shadow-sm font-[family-name:var(--font-syne)]">
               Featured
             </span>
           )}
+          
+          {/* Distance badge - Golden for Sunset Velocity theme */}
+          {distance !== null && distance >= 0 && (
+            <span className="absolute top-3 left-3 bg-[#FFC233] text-[#1A1A2E] text-xs font-semibold px-2 py-1 rounded-full shadow-sm flex items-center gap-1">
+              <MapPin className="w-3 h-3" />
+              {formatDistance(distance, 'km')}
+            </span>
+          )}
+          
           {/* Platform type badge */}
-          <span className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm text-[#1A1A2E]/70 text-xs font-medium px-2 py-1 rounded-full capitalize">
+          <span className={`absolute top-3 right-3 bg-white/95 backdrop-blur-sm text-[#1A1A2E]/70 text-xs font-medium px-2 py-1 rounded-full capitalize ${distance !== null ? '' : ''}`}>
             {listing.platform_type}
           </span>
         </div>

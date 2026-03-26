@@ -247,6 +247,7 @@ export interface HostRegistrationData {
 export interface ListingCardProps {
   listing: Listing;
   priority?: boolean; // for above-fold images
+  distance?: number | null; // distance in km
 }
 
 export interface HostProfileCardProps {
