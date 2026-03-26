@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Sunset Velocity Colors */
+  --color-primary: #FF6B35;
+  --color-secondary: #9B59B6;
+  --color-accent: #FFC233;
+  --color-warm-cream: #FFF8F5;
+  --color-midnight: #1A1A2E;
+  
+  --background: var(--color-warm-cream);
+  --foreground: var(--color-midnight);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-warm-cream: var(--color-warm-cream);
+  --color-midnight: var(--color-midnight);
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-dm-sans);
+  --font-ui: var(--font-syne);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Sunset Velocity Gradient */
+.sunset-gradient {
+  background: linear-gradient(135deg, #FF6B35 0%, #9B59B6 100%);
+}
+
+/* Warm card backgrounds */
+.card-warm {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(255, 107, 53, 0.1);
+}
+
+/* Soft shadow for cards */
+.shadow-warm {
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.08);
 }

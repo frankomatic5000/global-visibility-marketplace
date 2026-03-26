@@ -63,10 +63,10 @@ export default function CountryBrowsePage() {
 
   if (!currentCountry) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-[#FFF8F5]">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Country not found</h1>
-          <Link href="/browse" className="text-blue-600 hover:underline">
+          <h1 className="text-2xl font-bold text-[#1A1A2E] mb-4">Country not found</h1>
+          <Link href="/browse" className="text-[#FF6B35] hover:underline">
             Back to Browse
           </Link>
         </div>
@@ -75,20 +75,20 @@ export default function CountryBrowsePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#FFF8F5]">
       {/* Breadcrumb */}
-      <div className="bg-white border-b">
+      <div className="bg-white border-b border-[#FF6B35]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center text-sm">
-            <Link href="/browse" className="text-gray-500 hover:text-gray-900">
+            <Link href="/browse" className="text-[#1A1A2E]/50 hover:text-[#1A1A2E]">
               Browse
             </Link>
-            <span className="mx-2 text-gray-400">/</span>
-            <span className="text-gray-900 font-medium">{currentCountry.name}</span>
+            <span className="mx-2 text-[#1A1A2E]/30">/</span>
+            <span className="text-[#1A1A2E] font-medium">{currentCountry.name}</span>
             {citySlug && (
               <>
-                <span className="mx-2 text-gray-400">/</span>
-                <span className="text-gray-900 font-medium">
+                <span className="mx-2 text-[#1A1A2E]/30">/</span>
+                <span className="text-[#1A1A2E] font-medium">
                   {sampleRegions.find(r => r.slug === citySlug)?.name}
                 </span>
               </>
@@ -101,13 +101,13 @@ export default function CountryBrowsePage() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar Filters */}
           <aside className="lg:w-64 flex-shrink-0">
-            <div className="bg-white rounded-xl shadow-sm p-6 sticky top-24">
-              <h2 className="font-semibold text-gray-900 mb-4">Filters</h2>
+            <div className="bg-white rounded-xl shadow-sm border border-[#FF6B35]/10 p-6 sticky top-24">
+              <h2 className="font-semibold text-[#1A1A2E] mb-4 font-[family-name:var(--font-dm-sans)]">Filters</h2>
 
               {/* City Filter */}
               {cities.length > 0 && (
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
                     City
                   </label>
                   <select
@@ -119,7 +119,7 @@ export default function CountryBrowsePage() {
                         router.push(`?country=${currentCountry.slug}`);
                       }
                     }}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                    className="w-full px-3 py-2 border border-[#FF6B35]/20 rounded-lg bg-white text-[#1A1A2E]"
                   >
                     <option value="">All cities</option>
                     {cities.map((city) => (
@@ -133,13 +133,13 @@ export default function CountryBrowsePage() {
 
               {/* Platform Filter */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
                   Platform Type
                 </label>
                 <select
                   value={platformFilter}
                   onChange={(e) => setPlatformFilter(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                  className="w-full px-3 py-2 border border-[#FF6B35]/20 rounded-lg bg-white text-[#1A1A2E]"
                 >
                   <option value="all">All types</option>
                   <option value="podcast">Podcast</option>
@@ -151,13 +151,13 @@ export default function CountryBrowsePage() {
 
               {/* Price Filter */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
                   Price Range
                 </label>
                 <select
                   value={priceFilter}
                   onChange={(e) => setPriceFilter(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                  className="w-full px-3 py-2 border border-[#FF6B35]/20 rounded-lg bg-white text-[#1A1A2E]"
                 >
                   <option value="all">All prices</option>
                   <option value="under_100">Under $100</option>
@@ -168,13 +168,13 @@ export default function CountryBrowsePage() {
 
               {/* Sort */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
                   Sort By
                 </label>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                  className="w-full px-3 py-2 border border-[#FF6B35]/20 rounded-lg bg-white text-[#1A1A2E]"
                 >
                   <option value="featured">Featured first</option>
                   <option value="newest">Newest</option>
@@ -190,7 +190,7 @@ export default function CountryBrowsePage() {
                   setPriceFilter('all');
                   setSortBy('featured');
                 }}
-                className="w-full text-sm text-blue-600 hover:text-blue-700"
+                className="w-full text-sm text-[#FF6B35] hover:text-[#E55A2B]"
               >
                 Clear all filters
               </button>
@@ -201,13 +201,13 @@ export default function CountryBrowsePage() {
           <main className="flex-1">
             {/* Header */}
             <div className="mb-6">
-              <h1 className="text-2xl font-bold text-gray-900">
+              <h1 className="text-2xl font-bold text-[#1A1A2E] font-[family-name:var(--font-playfair)]">
                 {citySlug 
                   ? `Listings in ${sampleRegions.find(r => r.slug === citySlug)?.name}`
                   : `Listings in ${currentCountry.name}`
                 }
               </h1>
-              <p className="text-gray-600 mt-1">
+              <p className="text-[#1A1A2E]/60 mt-1">
                 {filteredListings.length} opportunity{filteredListings.length !== 1 ? 'ies' : ''} found
               </p>
             </div>
@@ -220,14 +220,14 @@ export default function CountryBrowsePage() {
                 ))}
               </div>
             ) : (
-              <div className="bg-white rounded-xl shadow-sm p-12 text-center">
-                <p className="text-gray-500 mb-4">No listings match your filters</p>
+              <div className="bg-white rounded-xl shadow-sm border border-[#FF6B35]/10 p-12 text-center">
+                <p className="text-[#1A1A2E]/50 mb-4">No listings match your filters</p>
                 <button
                   onClick={() => {
                     setPlatformFilter('all');
                     setPriceFilter('all');
                   }}
-                  className="text-blue-600 hover:text-blue-700"
+                  className="text-[#FF6B35] hover:text-[#E55A2B]"
                 >
                   Clear filters
                 </button>

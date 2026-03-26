@@ -40,36 +40,36 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#FFF8F5]">
+      {/* Hero Section - Sunset Gradient */}
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#FF6B35] via-[#E55A2B] to-[#9B59B6]">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-[family-name:var(--font-playfair)]">
             Book Visibility
-            <span className="text-blue-600"> Anywhere </span>
+            <span className="text-[#FFC233]"> Anywhere </span>
             in the World
           </h1>
-          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto font-[family-name:var(--font-dm-sans)]">
             Connect with podcast hosts, event organizers, and media outlets in 100+ cities. 
             Get your brand in front of the right audiences, everywhere.
           </p>
 
           {/* Region Selector */}
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8">
-            <h2 className="text-lg font-semibold text-gray-900 mb-6">
+          <div className="max-w-4xl mx-auto bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8">
+            <h2 className="text-lg font-semibold text-[#1A1A2E] mb-6 font-[family-name:var(--font-dm-sans)]">
               Find opportunities in your target region
             </h2>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               {/* Country selector */}
               <div className="w-full sm:w-64">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
                   Country
                 </label>
                 <select
                   value={selectedCountry || ''}
                   onChange={(e) => handleCountrySelect(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-3 border border-[#FF6B35]/20 rounded-lg focus:ring-2 focus:ring-[#FF6B35] focus:border-[#FF6B35] bg-white text-[#1A1A2E]"
                 >
                   <option value="">Select a country</option>
                   {countries.map((country) => (
@@ -82,14 +82,14 @@ export default function LandingPage() {
 
               {/* City selector */}
               <div className="w-full sm:w-64">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
                   City
                 </label>
                 <select
                   value={selectedCity || ''}
                   onChange={(e) => handleCitySelect(e.target.value)}
                   disabled={!selectedCountry}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 border border-[#FF6B35]/20 rounded-lg focus:ring-2 focus:ring-[#FF6B35] focus:border-[#FF6B35] disabled:bg-[#FFF8F5] disabled:cursor-not-allowed bg-white text-[#1A1A2E]"
                 >
                   <option value="">Select a city</option>
                   {cities.map((city) => (
@@ -102,13 +102,13 @@ export default function LandingPage() {
 
               {/* Explore button */}
               <div className="w-full sm:w-auto">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
                   &nbsp;
                 </label>
                 <button
                   onClick={handleExplore}
                   disabled={!selectedCountry && !selectedCity}
-                  className="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
+                  className="w-full sm:w-auto px-8 py-3 bg-[#FF6B35] text-white font-semibold rounded-lg hover:bg-[#E55A2B] transition-colors disabled:bg-[#1A1A2E]/20 disabled:cursor-not-allowed font-[family-name:var(--font-syne)]"
                 >
                   Explore →
                 </button>
@@ -116,14 +116,14 @@ export default function LandingPage() {
             </div>
 
             {/* Quick links */}
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <p className="text-sm text-gray-500 mb-3">Popular regions:</p>
+            <div className="mt-6 pt-6 border-t border-[#FF6B35]/10">
+              <p className="text-sm text-[#1A1A2E]/50 mb-3">Popular regions:</p>
               <div className="flex flex-wrap gap-2 justify-center">
                 {countries.slice(0, 4).map((country) => (
                   <button
                     key={country.id}
                     onClick={() => router.push(`/browse/${country.slug}`)}
-                    className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors"
+                    className="px-3 py-1 text-sm bg-[#FFF8F5] text-[#1A1A2E]/70 rounded-full hover:bg-[#FF6B35]/10 hover:text-[#FF6B35] transition-colors"
                   >
                     {country.name}
                   </button>
@@ -138,10 +138,10 @@ export default function LandingPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-[#1A1A2E] mb-4 font-[family-name:var(--font-playfair)]">
               Featured Opportunities
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-[#1A1A2E]/60">
               Get noticed by engaged audiences worldwide
             </p>
           </div>
@@ -155,7 +155,7 @@ export default function LandingPage() {
           <div className="text-center mt-10">
             <button
               onClick={() => router.push('/browse')}
-              className="px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+              className="px-8 py-3 border-2 border-[#FF6B35] text-[#FF6B35] font-semibold rounded-lg hover:bg-[#FF6B35] hover:text-white transition-colors font-[family-name:var(--font-syne)]"
             >
               Browse All Listings →
             </button>
@@ -164,45 +164,45 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF8F5]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#1A1A2E] text-center mb-12 font-[family-name:var(--font-playfair)]">
             How It Works
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#FF6B35]/20 to-[#9B59B6]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🔍</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-[#1A1A2E] mb-2 font-[family-name:var(--font-dm-sans)]">
                 1. Discover
               </h3>
-              <p className="text-gray-600">
+              <p className="text-[#1A1A2E]/60">
                 Browse listings by region. Filter by platform type, audience size, and budget.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#FF6B35]/20 to-[#9B59B6]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">📅</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-[#1A1A2E] mb-2 font-[family-name:var(--font-dm-sans)]">
                 2. Book
               </h3>
-              <p className="text-gray-600">
+              <p className="text-[#1A1A2E]/60">
                 Request a booking with your pitch. Pay securely through Stripe.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#FF6B35]/20 to-[#9B59B6]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🎙️</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-[#1A1A2E] mb-2 font-[family-name:var(--font-dm-sans)]">
                 3. Shine
               </h3>
-              <p className="text-gray-600">
+              <p className="text-[#1A1A2E]/60">
                 Get featured and reach new audiences. Leave a review after your spot.
               </p>
             </div>
@@ -211,17 +211,17 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-blue-600">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#9B59B6] to-[#FF6B35]">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-3xl font-bold mb-4 font-[family-name:var(--font-playfair)]">
             Have a Podcast or Media Platform?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-white/80">
             Monetize your audience by hosting guests from around the world.
           </p>
           <button
             onClick={() => router.push('/host')}
-            className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+            className="px-8 py-3 bg-white text-[#FF6B35] font-semibold rounded-lg hover:bg-[#FFF8F5] transition-colors font-[family-name:var(--font-syne)]"
           >
             Become a Host →
           </button>

@@ -63,10 +63,10 @@ function BrowseContent() {
 
   if (!currentCountry) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-[#FFF8F5]">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Country not found</h1>
-          <Link href="/browse" className="text-blue-600 hover:underline">
+          <h1 className="text-2xl font-bold text-[#1A1A2E] mb-4">Country not found</h1>
+          <Link href="/browse" className="text-[#FF6B35] hover:underline">
             Back to Browse
           </Link>
         </div>
@@ -75,22 +75,22 @@ function BrowseContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#FFF8F5]">
       {/* Breadcrumb */}
-      <div className="bg-white border-b">
+      <div className="bg-white border-b border-[#FF6B35]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center text-sm">
-            <Link href="/browse" className="text-gray-500 hover:text-gray-900">
+            <Link href="/browse" className="text-[#1A1A2E]/50 hover:text-[#1A1A2E]">
               Browse
             </Link>
-            <span className="mx-2 text-gray-400">/</span>
-            <Link href={`/browse?country=${currentCountry.slug}`} className="text-gray-500 hover:text-gray-900">
+            <span className="mx-2 text-[#1A1A2E]/30">/</span>
+            <Link href={`/browse?country=${currentCountry.slug}`} className="text-[#1A1A2E]/50 hover:text-[#1A1A2E]">
               {currentCountry.name}
             </Link>
             {citySlug && (
               <>
-                <span className="mx-2 text-gray-400">/</span>
-                <span className="text-gray-900 font-medium">
+                <span className="mx-2 text-[#1A1A2E]/30">/</span>
+                <span className="text-[#1A1A2E] font-medium">
                   {sampleRegions.find(r => r.slug === citySlug)?.name}
                 </span>
               </>
@@ -103,13 +103,13 @@ function BrowseContent() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar Filters */}
           <aside className="lg:w-64 flex-shrink-0">
-            <div className="bg-white rounded-xl shadow-sm p-6 sticky top-24">
-              <h2 className="font-semibold text-gray-900 mb-4">Filters</h2>
+            <div className="bg-white rounded-xl shadow-sm border border-[#FF6B35]/10 p-6 sticky top-24">
+              <h2 className="font-semibold text-[#1A1A2E] mb-4 font-[family-name:var(--font-dm-sans)]">Filters</h2>
 
               {/* City Filter */}
               {!citySlug && cities.length > 0 && (
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
                     City
                   </label>
                   <select
@@ -121,7 +121,7 @@ function BrowseContent() {
                         router.push(`/browse?country=${currentCountry.slug}`);
                       }
                     }}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                    className="w-full px-3 py-2 border border-[#FF6B35]/20 rounded-lg bg-white text-[#1A1A2E]"
                   >
                     <option value="">All cities</option>
                     {cities.map((city) => (
@@ -135,13 +135,13 @@ function BrowseContent() {
 
               {/* Platform Filter */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
                   Platform Type
                 </label>
                 <select
                   value={platformFilter}
                   onChange={(e) => setPlatformFilter(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                  className="w-full px-3 py-2 border border-[#FF6B35]/20 rounded-lg bg-white text-[#1A1A2E]"
                 >
                   <option value="all">All types</option>
                   <option value="podcast">Podcast</option>
@@ -153,13 +153,13 @@ function BrowseContent() {
 
               {/* Price Filter */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
                   Price Range
                 </label>
                 <select
                   value={priceFilter}
                   onChange={(e) => setPriceFilter(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                  className="w-full px-3 py-2 border border-[#FF6B35]/20 rounded-lg bg-white text-[#1A1A2E]"
                 >
                   <option value="all">All prices</option>
                   <option value="under_100">Under $100</option>
@@ -170,13 +170,13 @@ function BrowseContent() {
 
               {/* Sort */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
                   Sort By
                 </label>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                  className="w-full px-3 py-2 border border-[#FF6B35]/20 rounded-lg bg-white text-[#1A1A2E]"
                 >
                   <option value="featured">Featured first</option>
                   <option value="newest">Newest</option>
@@ -192,7 +192,7 @@ function BrowseContent() {
                   setPriceFilter('all');
                   setSortBy('featured');
                 }}
-                className="w-full text-sm text-blue-600 hover:text-blue-700"
+                className="w-full text-sm text-[#FF6B35] hover:text-[#E55A2B]"
               >
                 Clear all filters
               </button>
@@ -203,13 +203,13 @@ function BrowseContent() {
           <main className="flex-1">
             {/* Header */}
             <div className="mb-6">
-              <h1 className="text-2xl font-bold text-gray-900">
+              <h1 className="text-2xl font-bold text-[#1A1A2E] font-[family-name:var(--font-playfair)]">
                 {citySlug 
                   ? `Listings in ${sampleRegions.find(r => r.slug === citySlug)?.name}`
                   : `Listings in ${currentCountry.name}`
                 }
               </h1>
-              <p className="text-gray-600 mt-1">
+              <p className="text-[#1A1A2E]/60 mt-1">
                 {filteredListings.length} opportunity{filteredListings.length !== 1 ? 'ies' : ''} found
               </p>
             </div>
@@ -222,14 +222,14 @@ function BrowseContent() {
                 ))}
               </div>
             ) : (
-              <div className="bg-white rounded-xl shadow-sm p-12 text-center">
-                <p className="text-gray-500 mb-4">No listings match your filters</p>
+              <div className="bg-white rounded-xl shadow-sm border border-[#FF6B35]/10 p-12 text-center">
+                <p className="text-[#1A1A2E]/50 mb-4">No listings match your filters</p>
                 <button
                   onClick={() => {
                     setPlatformFilter('all');
                     setPriceFilter('all');
                   }}
-                  className="text-blue-600 hover:text-blue-700"
+                  className="text-[#FF6B35] hover:text-[#E55A2B]"
                 >
                   Clear filters
                 </button>
@@ -245,8 +245,8 @@ function BrowseContent() {
 export default function BrowsePage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-gray-500">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center bg-[#FFF8F5]">
+        <div className="text-[#1A1A2E]/50">Loading...</div>
       </div>
     }>
       <BrowseContent />

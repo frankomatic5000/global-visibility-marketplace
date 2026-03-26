@@ -13,9 +13,9 @@ export default function ListingCard({ listing, priority = false }: ListingCardPr
 
   return (
     <Link href={`/listings/${listing.id}`} className="group block h-full">
-      <article className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full flex flex-col">
+      <article className="bg-white rounded-xl shadow-sm border border-[#FF6B35]/10 overflow-hidden hover:shadow-md hover:border-[#FF6B35]/30 transition-all cursor-pointer h-full flex flex-col">
         {/* Cover image with Next.js Image optimization */}
-        <div className="relative h-48 bg-gray-200 overflow-hidden">
+        <div className="relative h-48 bg-[#FFF8F5] overflow-hidden">
           {listing.cover_image_url ? (
             <Image
               src={listing.cover_image_url}
@@ -26,17 +26,17 @@ export default function ListingCard({ listing, priority = false }: ListingCardPr
               priority={priority}
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-4xl bg-gradient-to-br from-blue-100 to-blue-200">
+            <div className="w-full h-full flex items-center justify-center text-4xl bg-gradient-to-br from-[#FF6B35]/10 to-[#9B59B6]/10">
               🎙️
             </div>
           )}
           {listing.is_featured && (
-            <span className="absolute top-3 left-3 bg-yellow-400 text-yellow-900 text-xs font-semibold px-2 py-1 rounded-full shadow-sm">
+            <span className="absolute top-3 left-3 bg-[#FFC233] text-[#1A1A2E] text-xs font-semibold px-2 py-1 rounded-full shadow-sm font-[family-name:var(--font-syne)]">
               Featured
             </span>
           )}
           {/* Platform type badge */}
-          <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-medium px-2 py-1 rounded-full capitalize">
+          <span className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm text-[#1A1A2E]/70 text-xs font-medium px-2 py-1 rounded-full capitalize">
             {listing.platform_type}
           </span>
         </div>
@@ -45,25 +45,25 @@ export default function ListingCard({ listing, priority = false }: ListingCardPr
         <div className="p-5 flex-1 flex flex-col">
           {/* Listing type badge */}
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-medium text-blue-600 uppercase tracking-wide">
+            <span className="text-xs font-medium text-[#FF6B35] uppercase tracking-wide font-[family-name:var(--font-syne)]">
               {listing.listing_type.replace('_', ' ')}
             </span>
           </div>
 
           {/* Title */}
-          <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
+          <h3 className="text-lg font-semibold text-[#1A1A2E] mb-2 line-clamp-2 group-hover:text-[#FF6B35] transition-colors font-[family-name:var(--font-playfair)]">
             {listing.title}
           </h3>
 
           {/* Description */}
-          <p className="text-sm text-gray-600 mb-4 line-clamp-2 flex-1">
+          <p className="text-sm text-[#1A1A2E]/60 mb-4 line-clamp-2 flex-1">
             {listing.description}
           </p>
 
           {/* Location */}
-          <div className="flex items-center text-sm text-gray-500 mb-4">
+          <div className="flex items-center text-sm text-[#1A1A2E]/50 mb-4">
             <svg
-              className="w-4 h-4 mr-1 text-gray-400"
+              className="w-4 h-4 mr-1 text-[#FF6B35]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -85,7 +85,7 @@ export default function ListingCard({ listing, priority = false }: ListingCardPr
           </div>
 
           {/* Divider */}
-          <div className="border-t border-gray-100 pt-4">
+          <div className="border-t border-[#FF6B35]/10 pt-4">
             {/* Host info */}
             <div className="flex items-center mb-4">
               {host?.avatar_url ? (
@@ -97,14 +97,14 @@ export default function ListingCard({ listing, priority = false }: ListingCardPr
                   className="w-8 h-8 rounded-full mr-3"
                 />
               ) : (
-                <div className="w-8 h-8 rounded-full bg-gray-200 mr-3" />
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FF6B35]/20 to-[#9B59B6]/20 mr-3" />
               )}
               <div>
-                <p className="text-sm font-medium text-gray-900">
+                <p className="text-sm font-medium text-[#1A1A2E]">
                   {host?.full_name || 'Unknown Host'}
                 </p>
                 {host?.is_verified && (
-                  <span className="text-xs text-blue-500">✓ Verified</span>
+                  <span className="text-xs text-[#FF6B35]">✓ Verified</span>
                 )}
               </div>
             </div>
@@ -112,11 +112,11 @@ export default function ListingCard({ listing, priority = false }: ListingCardPr
             {/* Price and duration */}
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-xl font-bold text-gray-900">
+                <span className="text-xl font-bold text-[#1A1A2E]">
                   {formatPrice(listing.price_cents, listing.currency)}
                 </span>
                 {listing.duration_mins && (
-                  <span className="text-sm text-gray-500 ml-2">
+                  <span className="text-sm text-[#1A1A2E]/50 ml-2">
                     / {listing.duration_mins}min
                   </span>
                 )}
