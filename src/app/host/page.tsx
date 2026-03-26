@@ -41,10 +41,10 @@ export default function HostPage() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="text-4xl">🎙️</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-white font-[family-name:var(--font-playfair)]">
+          <h1 className="text-3xl sm:text-4xl font-bold text-athos-navy font-[family-name:var(--font-playfair)]">
             Become a Host
           </h1>
-          <p className="text-white/80 mt-3 max-w-2xl mx-auto">
+          <p className="text-athos-navy/80 mt-3 max-w-2xl mx-auto">
             Monetize your podcast by hosting guests from around the world
           </p>
         </div>
