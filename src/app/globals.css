@@ -1,25 +1,97 @@
+/**
+ * GVM Brand — Athos Bulcão Creative V2
+ * Inspired by the iconic tile designs of Athos Bulcão
+ * Modern web interpretation with bold artistic energy
+ * 
+ * Applied: 2026-03-26
+ * Project: Global Visibility Marketplace
+ * Version: 2.0 Creative (WINNER)
+ */
+
 @import "tailwindcss";
 
 :root {
-  /* Sunset Velocity Colors */
-  --color-primary: #FF6B35;
-  --color-secondary: #9B59B6;
-  --color-accent: #FFC233;
-  --color-warm-cream: #FFF8F5;
-  --color-midnight: #1A1A2E;
+  /* ========================================
+     ATHOS COLOR PALETTE — Extracted from Bulcão Tiles
+     ======================================== */
   
-  --background: var(--color-warm-cream);
-  --foreground: var(--color-midnight);
+  /* Core Blues (from wave and diamond tiles) */
+  --athos-azure: #1E5AA8;
+  --athos-cerulean: #3B82C6;
+  --athos-sky: #60A5FA;
+  --athos-pale-blue: #DBEAFE;
+  --athos-deep-blue: #0F2A4D;
+  --athos-navy: #0A1A2E;
+  
+  /* Warm Accents (from colorful tile variations) */
+  --athos-gold: #F59E0B;
+  --athos-amber: #FBBF24;
+  --athos-mustard: #D97706;
+  --athos-yellow: #FCD34D;
+  --athos-cream: #FEF3C7;
+  
+  /* Earth Tones (from geometric tiles) */
+  --athos-emerald: #10B981;
+  --athos-teal: #14B8A6;
+  --athos-olive: #84CC16;
+  --athos-sage: #65A30D;
+  
+  /* Neutrals */
+  --athos-charcoal: #1F2937;
+  --athos-gray: #6B7280;
+  --athos-silver: #9CA3AF;
+  --athos-snow: #FAFAFA;
+  --athos-white: #FFFFFF;
+  
+  /* Legacy compatibility */
+  --color-primary: var(--athos-azure);
+  --color-secondary: var(--athos-gold);
+  --color-accent: var(--athos-emerald);
+  --color-warm-cream: var(--athos-cream);
+  --color-midnight: var(--athos-navy);
+  
+  /* Application colors */
+  --background: var(--athos-snow);
+  --foreground: var(--athos-navy);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  
+  /* Athos Color System */
+  --color-athos-azure: var(--athos-azure);
+  --color-athos-cerulean: var(--athos-cerulean);
+  --color-athos-sky: var(--athos-sky);
+  --color-athos-pale-blue: var(--athos-pale-blue);
+  --color-athos-deep-blue: var(--athos-deep-blue);
+  --color-athos-navy: var(--athos-navy);
+  
+  --color-athos-gold: var(--athos-gold);
+  --color-athos-amber: var(--athos-amber);
+  --color-athos-mustard: var(--athos-mustard);
+  --color-athos-yellow: var(--athos-yellow);
+  --color-athos-cream: var(--athos-cream);
+  
+  --color-athos-emerald: var(--athos-emerald);
+  --color-athos-teal: var(--athos-teal);
+  --color-athos-olive: var(--athos-olive);
+  --color-athos-sage: var(--athos-sage);
+  
+  --color-athos-charcoal: var(--athos-charcoal);
+  --color-athos-gray: var(--athos-gray);
+  --color-athos-silver: var(--athos-silver);
+  --color-athos-snow: var(--athos-snow);
+  --color-athos-white: var(--athos-white);
+  
+  /* Legacy compatibility */
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
   --color-accent: var(--color-accent);
   --color-warm-cream: var(--color-warm-cream);
   --color-midnight: var(--color-midnight);
+  
+  /* Typography */
   --font-heading: var(--font-playfair);
   --font-body: var(--font-dm-sans);
   --font-ui: var(--font-syne);
@@ -31,18 +103,194 @@ body {
   font-family: var(--font-body), system-ui, sans-serif;
 }
 
-/* Sunset Velocity Gradient */
+/* ========================================
+   ATHOS PATTERN LIBRARY
+   ======================================== */
+
+/* Pattern: Waves — Hero/Dividers */
+.pattern-athos-waves {
+  background-color: var(--athos-pale-blue);
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 20% 40%, var(--athos-azure) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, var(--athos-cerulean) 0%, transparent 45%),
+    radial-gradient(ellipse 70% 35% at 50% 20%, var(--athos-sky) 0%, transparent 40%),
+    radial-gradient(ellipse 50% 60% at 30% 80%, var(--athos-gold) 0%, transparent 35%);
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.pattern-athos-waves::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      110deg,
+      transparent,
+      transparent 40px,
+      rgba(30, 90, 168, 0.03) 40px,
+      rgba(30, 90, 168, 0.03) 80px
+    );
+  pointer-events: none;
+}
+
+/* Pattern: Diamonds — Cards */
+.pattern-athos-diamonds {
+  background-color: var(--athos-white);
+  background-image:
+    conic-gradient(from 45deg at 25% 25%, transparent 0deg, var(--athos-azure) 0deg 90deg, transparent 90deg),
+    conic-gradient(from 225deg at 75% 25%, transparent 0deg, var(--athos-cerulean) 0deg 90deg, transparent 90deg),
+    conic-gradient(from 135deg at 25% 75%, transparent 0deg, var(--athos-sky) 0deg 90deg, transparent 90deg),
+    conic-gradient(from 315deg at 75% 75%, transparent 0deg, var(--athos-gold) 0deg 90deg, transparent 90deg);
+  background-size: 120px 120px;
+  background-position: 0 0;
+}
+
+/* Pattern: Radiate — Hero (bold, energetic) */
+.pattern-athos-radiate {
+  background-color: var(--athos-pale-blue);
+  background-image:
+    repeating-conic-gradient(
+      from 0deg at 30% 40%,
+      transparent 0deg 15deg,
+      var(--athos-azure) 15deg 18deg,
+      transparent 18deg 30deg
+    );
+  position: relative;
+}
+
+.pattern-athos-radiate::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-conic-gradient(
+      from 180deg at 70% 60%,
+      transparent 0deg 20deg,
+      var(--athos-gold) 20deg 22deg,
+      transparent 22deg 40deg
+    );
+  opacity: 0.7;
+}
+
+/* Pattern: Mosaic — Footer */
+.pattern-athos-mosaic {
+  background-color: var(--athos-cream);
+  background-image:
+    linear-gradient(135deg, var(--athos-azure) 25%, transparent 25%),
+    linear-gradient(225deg, var(--athos-gold) 25%, transparent 25%),
+    linear-gradient(45deg, var(--athos-emerald) 25%, transparent 25%),
+    linear-gradient(315deg, var(--athos-cerulean) 25%, transparent 25%);
+  background-size: 80px 80px;
+  background-position: 40px 0, 0 0, 0 40px, 40px 40px;
+}
+
+/* Pattern: Plus */
+.pattern-athos-plus {
+  background-color: var(--athos-pale-blue);
+  background-image:
+    linear-gradient(var(--athos-azure) 4px, transparent 4px),
+    linear-gradient(90deg, var(--athos-azure) 4px, transparent 4px),
+    linear-gradient(var(--athos-cerulean) 2px, transparent 2px),
+    linear-gradient(90deg, var(--athos-cerulean) 2px, transparent 2px);
+  background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
+  background-position: center center;
+}
+
+/* Pattern: Flow — Hero backgrounds */
+.pattern-athos-flow {
+  background-color: var(--athos-cream);
+  background-image:
+    radial-gradient(ellipse 100% 50% at 0% 50%, var(--athos-azure) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 40% at 100% 30%, var(--athos-gold) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 80% at 50% 100%, var(--athos-cerulean) 0%, transparent 45%);
+  background-size: 150% 150%;
+  animation: athosFlow 20s ease-in-out infinite;
+}
+
+@keyframes athosFlow {
+  0%, 100% { background-position: 0% 50%, 100% 50%, 50% 100%; }
+  50% { background-position: 100% 50%, 0% 50%, 50% 0%; }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Text gradient */
+.text-gradient-athos {
+  background: linear-gradient(135deg, var(--athos-azure), var(--athos-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass-athos {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Card styles */
+.card-athos {
+  background: var(--athos-white);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(30, 90, 168, 0.15);
+}
+
+/* Button styles */
+.btn-athos-primary {
+  background: var(--athos-azure);
+  color: var(--athos-white);
+  box-shadow: 0 4px 15px rgba(30, 90, 168, 0.3);
+}
+
+.btn-athos-primary:hover {
+  background: var(--athos-deep-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(30, 90, 168, 0.4);
+}
+
+.btn-athos-gold {
+  background: var(--athos-gold);
+  color: var(--athos-navy);
+}
+
+.btn-athos-gold:hover {
+  background: var(--athos-amber);
+}
+
+/* Overlays for patterns */
+.athos-overlay-light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.9) 100%);
+  pointer-events: none;
+}
+
+.athos-overlay-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 26, 46, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* ========================================
+   LEGACY COMPATIBILITY
+   ======================================== */
+
 .sunset-gradient {
-  background: linear-gradient(135deg, #FF6B35 0%, #9B59B6 100%);
+  background: linear-gradient(135deg, var(--athos-azure) 0%, var(--athos-gold) 100%);
 }
 
-/* Warm card backgrounds */
 .card-warm {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(255, 107, 53, 0.1);
+  background-color: var(--athos-white);
+  border: 1px solid rgba(30, 90, 168, 0.1);
 }
 
-/* Soft shadow for cards */
 .shadow-warm {
-  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.08);
+  box-shadow: 0 4px 20px rgba(30, 90, 168, 0.08);
 }

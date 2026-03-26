@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Radial gradient for center glow -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.8" />
+      <stop offset="30%" style="stop-color:#3B82C6;stop-opacity:0.6" />
+      <stop offset="70%" style="stop-color:#1E5AA8;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#DBEAFE;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="#DBEAFE"/>
+  
+  <!-- Multiple radiating centers -->
+  <g opacity="0.9">
+    <!-- Center 1: Top-left quadrant -->
+    <g transform="translate(100,100)">
+      <circle r="8" fill="#F59E0B"/>
+      <g stroke="#1E5AA8" stroke-width="3" fill="none" opacity="0.8">
+        <line x1="0" y1="0" x2="0" y2="-80" />
+        <line x1="0" y1="0" x2="56" y2="-56" />
+        <line x1="0" y1="0" x2="80" y2="0" />
+        <line x1="0" y1="0" x2="56" y2="56" />
+        <line x1="0" y1="0" x2="0" y2="80" />
+        <line x1="0" y1="0" x2="-56" y2="56" />
+        <line x1="0" y1="0" x2="-80" y2="0" />
+        <line x1="0" y1="0" x2="-56" y2="-56" />
+      </g>
+    </g>
+    
+    <!-- Center 2: Bottom-right -->
+    <g transform="translate(300,300)">
+      <circle r="6" fill="#1E5AA8"/>
+      <g stroke="#3B82C6" stroke-width="2" fill="none" opacity="0.7">
+        <line x1="0" y1="0" x2="0" y2="-60" />
+        <line x1="0" y1="0" x2="42" y2="-42" />
+        <line x1="0" y1="0" x2="60" y2="0" />
+        <line x1="0" y1="0" x2="42" y2="42" />
+        <line x1="0" y1="0" x2="0" y2="60" />
+        <line x1="0" y1="0" x2="-42" y2="42" />
+        <line x1="0" y1="0" x2="-60" y2="0" />
+        <line x1="0" y1="0" x2="-42" y2="-42" />
+      </g>
+    </g>
+    
+    <!-- Center 3: Top-right -->
+    <g transform="translate(300,100)">
+      <circle r="5" fill="#10B981"/>
+      <g stroke="#60A5FA" stroke-width="2" fill="none" opacity="0.6">
+        <line x1="0" y1="0" x2="0" y2="-50" />
+        <line x1="0" y1="0" x2="35" y2="-35" />
+        <line x1="0" y1="0" x2="50" y2="0" />
+        <line x1="0" y1="0" x2="35" y2="35" />
+        <line x1="0" y1="0" x2="0" y2="50" />
+        <line x1="0" y1="0" x2="-35" y2="35" />
+        <line x1="0" y1="0" x2="-50" y2="0" />
+        <line x1="0" y1="0" x2="-35" y2="-35" />
+      </g>
+    </g>
+  </g>
+  
+  <!-- Connecting arcs -->
+  <path d="M100,100 Q200,150 300,100" stroke="#F59E0B" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M300,300 Q200,250 100,300" stroke="#3B82C6" stroke-width="2" fill="none" opacity="0.4"/>
+</svg>

@@ -18,8 +18,9 @@ export interface ListingCardProps {
  * Listing Card Component
  * Displays listing information with optional distance badge
  * 
- * Sunset Velocity styling:
- * - Distance badge: Golden (#FFC233)
+ * Athos Bulcão Creative V2 styling:
+ * - Primary: Azure blue (#1E5AA8)
+ * - Accent: Gold (#F59E0B)
  */
 export default function ListingCard({ 
   listing, 
@@ -32,9 +33,9 @@ export default function ListingCard({
 
   return (
     <Link href={`/listings/${listing.id}`} className="group block h-full">
-      <article className="bg-white rounded-xl shadow-sm border border-[#FF6B35]/10 overflow-hidden hover:shadow-md hover:border-[#FF6B35]/30 transition-all cursor-pointer h-full flex flex-col">
+      <article className="bg-white rounded-xl shadow-sm border border-athos-azure/10 overflow-hidden hover:shadow-md hover:border-athos-azure/30 transition-all cursor-pointer h-full flex flex-col">
         {/* Cover image with Next.js Image optimization */}
-        <div className="relative h-48 bg-[#FFF8F5] overflow-hidden">
+        <div className="relative h-48 bg-athos-snow overflow-hidden">
           {listing.cover_image_url ? (
             <Image
               src={listing.cover_image_url}
@@ -45,28 +46,28 @@ export default function ListingCard({
               priority={priority}
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-4xl bg-gradient-to-br from-[#FF6B35]/10 to-[#9B59B6]/10">
+            <div className="w-full h-full flex items-center justify-center text-4xl bg-athos-pale-blue">
               🎙️
             </div>
           )}
           
           {/* Featured badge */}
           {listing.is_featured && (
-            <span className="absolute top-3 left-3 bg-[#FFC233] text-[#1A1A2E] text-xs font-semibold px-2 py-1 rounded-full shadow-sm font-[family-name:var(--font-syne)]">
+            <span className="absolute top-3 left-3 bg-athos-gold text-athos-navy text-xs font-semibold px-2 py-1 rounded-full shadow-sm font-[family-name:var(--font-syne)]">
               Featured
             </span>
           )}
           
-          {/* Distance badge - Golden for Sunset Velocity theme */}
+          {/* Distance badge */}
           {distance !== null && distance >= 0 && (
-            <span className="absolute top-3 left-3 bg-[#FFC233] text-[#1A1A2E] text-xs font-semibold px-2 py-1 rounded-full shadow-sm flex items-center gap-1">
+            <span className="absolute top-3 left-3 bg-athos-gold text-athos-navy text-xs font-semibold px-2 py-1 rounded-full shadow-sm flex items-center gap-1">
               <MapPin className="w-3 h-3" />
               {formatDistance(distance, 'km')}
             </span>
           )}
           
           {/* Platform type badge */}
-          <span className={`absolute top-3 right-3 bg-white/95 backdrop-blur-sm text-[#1A1A2E]/70 text-xs font-medium px-2 py-1 rounded-full capitalize ${distance !== null ? '' : ''}`}>
+          <span className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm text-athos-gray text-xs font-medium px-2 py-1 rounded-full capitalize">
             {listing.platform_type}
           </span>
         </div>
@@ -75,25 +76,25 @@ export default function ListingCard({
         <div className="p-5 flex-1 flex flex-col">
           {/* Listing type badge */}
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-medium text-[#FF6B35] uppercase tracking-wide font-[family-name:var(--font-syne)]">
+            <span className="text-xs font-medium text-athos-azure uppercase tracking-wide font-[family-name:var(--font-syne)]">
               {listing.listing_type.replace('_', ' ')}
             </span>
           </div>
 
           {/* Title */}
-          <h3 className="text-lg font-semibold text-[#1A1A2E] mb-2 line-clamp-2 group-hover:text-[#FF6B35] transition-colors font-[family-name:var(--font-playfair)]">
+          <h3 className="text-lg font-semibold text-athos-navy mb-2 line-clamp-2 group-hover:text-athos-azure transition-colors font-[family-name:var(--font-playfair)]">
             {listing.title}
           </h3>
 
           {/* Description */}
-          <p className="text-sm text-[#1A1A2E]/60 mb-4 line-clamp-2 flex-1">
+          <p className="text-sm text-athos-gray mb-4 line-clamp-2 flex-1">
             {listing.description}
           </p>
 
           {/* Location */}
-          <div className="flex items-center text-sm text-[#1A1A2E]/50 mb-4">
+          <div className="flex items-center text-sm text-athos-gray mb-4">
             <svg
-              className="w-4 h-4 mr-1 text-[#FF6B35]"
+              className="w-4 h-4 mr-1 text-athos-azure"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -115,7 +116,7 @@ export default function ListingCard({
           </div>
 
           {/* Divider */}
-          <div className="border-t border-[#FF6B35]/10 pt-4">
+          <div className="border-t border-athos-azure/10 pt-4">
             {/* Host info */}
             <div className="flex items-center mb-4">
               {host?.avatar_url ? (
@@ -127,14 +128,14 @@ export default function ListingCard({
                   className="w-8 h-8 rounded-full mr-3"
                 />
               ) : (
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FF6B35]/20 to-[#9B59B6]/20 mr-3" />
+                <div className="w-8 h-8 rounded-full bg-athos-azure/10 mr-3" />
               )}
               <div>
-                <p className="text-sm font-medium text-[#1A1A2E]">
+                <p className="text-sm font-medium text-athos-navy">
                   {host?.full_name || 'Unknown Host'}
                 </p>
                 {host?.is_verified && (
-                  <span className="text-xs text-[#FF6B35]">✓ Verified</span>
+                  <span className="text-xs text-athos-azure">✓ Verified</span>
                 )}
               </div>
             </div>
@@ -142,11 +143,11 @@ export default function ListingCard({
             {/* Price and duration */}
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-xl font-bold text-[#1A1A2E]">
+                <span className="text-xl font-bold text-athos-navy">
                   {formatPrice(listing.price_cents, listing.currency)}
                 </span>
                 {listing.duration_mins && (
-                  <span className="text-sm text-[#1A1A2E]/50 ml-2">
+                  <span className="text-sm text-athos-gray ml-2">
                     / {listing.duration_mins}min
                   </span>
                 )}

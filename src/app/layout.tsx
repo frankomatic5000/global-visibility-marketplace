@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${dmSans.variable} ${syne.variable} antialiased bg-[#FFF8F5] text-[#1A1A2E]`}>
+      <body className={`${playfair.variable} ${dmSans.variable} ${syne.variable} antialiased bg-athos-snow text-athos-navy`}>
         <Header />
         <main>{children}</main>
       </body>

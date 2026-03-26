@@ -40,36 +40,36 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF8F5]">
-      {/* Hero Section - Sunset Gradient */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#FF6B35] via-[#E55A2B] to-[#9B59B6]">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-[family-name:var(--font-playfair)]">
+    <div className="min-h-screen bg-athos-snow">
+      {/* Hero Section — Athos Radiate Pattern */}
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 pattern-athos-radiate">
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-athos-navy mb-6 font-[family-name:var(--font-playfair)]">
             Book Visibility
-            <span className="text-[#FFC233]"> Anywhere </span>
+            <span className="text-athos-azure"> Anywhere </span>
             in the World
           </h1>
-          <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto font-[family-name:var(--font-dm-sans)]">
+          <p className="text-xl text-athos-charcoal mb-12 max-w-3xl mx-auto font-[family-name:var(--font-dm-sans)]">
             Connect with podcast hosts, event organizers, and media outlets in 100+ cities. 
             Get your brand in front of the right audiences, everywhere.
           </p>
 
           {/* Region Selector */}
           <div className="max-w-4xl mx-auto bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8">
-            <h2 className="text-lg font-semibold text-[#1A1A2E] mb-6 font-[family-name:var(--font-dm-sans)]">
+            <h2 className="text-lg font-semibold text-athos-navy mb-6 font-[family-name:var(--font-dm-sans)]">
               Find opportunities in your target region
             </h2>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               {/* Country selector */}
               <div className="w-full sm:w-64">
-                <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
+                <label className="block text-sm font-medium text-athos-charcoal mb-2">
                   Country
                 </label>
                 <select
                   value={selectedCountry || ''}
                   onChange={(e) => handleCountrySelect(e.target.value)}
-                  className="w-full px-4 py-3 border border-[#FF6B35]/20 rounded-lg focus:ring-2 focus:ring-[#FF6B35] focus:border-[#FF6B35] bg-white text-[#1A1A2E]"
+                  className="w-full px-4 py-3 border border-athos-azure/20 rounded-lg focus:ring-2 focus:ring-athos-azure focus:border-athos-azure bg-white text-athos-navy"
                 >
                   <option value="">Select a country</option>
                   {countries.map((country) => (
@@ -82,14 +82,14 @@ export default function LandingPage() {
 
               {/* City selector */}
               <div className="w-full sm:w-64">
-                <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
+                <label className="block text-sm font-medium text-athos-charcoal mb-2">
                   City
                 </label>
                 <select
                   value={selectedCity || ''}
                   onChange={(e) => handleCitySelect(e.target.value)}
                   disabled={!selectedCountry}
-                  className="w-full px-4 py-3 border border-[#FF6B35]/20 rounded-lg focus:ring-2 focus:ring-[#FF6B35] focus:border-[#FF6B35] disabled:bg-[#FFF8F5] disabled:cursor-not-allowed bg-white text-[#1A1A2E]"
+                  className="w-full px-4 py-3 border border-athos-azure/20 rounded-lg focus:ring-2 focus:ring-athos-azure focus:border-athos-azure disabled:bg-athos-snow disabled:cursor-not-allowed bg-white text-athos-navy"
                 >
                   <option value="">Select a city</option>
                   {cities.map((city) => (
@@ -102,13 +102,13 @@ export default function LandingPage() {
 
               {/* Explore button */}
               <div className="w-full sm:w-auto">
-                <label className="block text-sm font-medium text-[#1A1A2E]/70 mb-2">
+                <label className="block text-sm font-medium text-athos-charcoal mb-2">
                   &nbsp;
                 </label>
                 <button
                   onClick={handleExplore}
                   disabled={!selectedCountry && !selectedCity}
-                  className="w-full sm:w-auto px-8 py-3 bg-[#FF6B35] text-white font-semibold rounded-lg hover:bg-[#E55A2B] transition-colors disabled:bg-[#1A1A2E]/20 disabled:cursor-not-allowed font-[family-name:var(--font-syne)]"
+                  className="w-full sm:w-auto px-8 py-3 bg-athos-azure text-white font-semibold rounded-lg hover:bg-athos-deep-blue transition-colors disabled:bg-athos-silver disabled:cursor-not-allowed font-[family-name:var(--font-syne)]"
                 >
                   Explore →
                 </button>
@@ -116,14 +116,14 @@ export default function LandingPage() {
             </div>
 
             {/* Quick links */}
-            <div className="mt-6 pt-6 border-t border-[#FF6B35]/10">
-              <p className="text-sm text-[#1A1A2E]/50 mb-3">Popular regions:</p>
+            <div className="mt-6 pt-6 border-t border-athos-azure/10">
+              <p className="text-sm text-athos-gray mb-3">Popular regions:</p>
               <div className="flex flex-wrap gap-2 justify-center">
                 {countries.slice(0, 4).map((country) => (
                   <button
                     key={country.id}
                     onClick={() => router.push(`/browse/${country.slug}`)}
-                    className="px-3 py-1 text-sm bg-[#FFF8F5] text-[#1A1A2E]/70 rounded-full hover:bg-[#FF6B35]/10 hover:text-[#FF6B35] transition-colors"
+                    className="px-3 py-1 text-sm bg-athos-pale-blue text-athos-azure rounded-full hover:bg-athos-azure hover:text-white transition-colors"
                   >
                     {country.name}
                   </button>
@@ -138,10 +138,10 @@ export default function LandingPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1A1A2E] mb-4 font-[family-name:var(--font-playfair)]">
+            <h2 className="text-3xl font-bold text-athos-navy mb-4 font-[family-name:var(--font-playfair)]">
               Featured Opportunities
             </h2>
-            <p className="text-lg text-[#1A1A2E]/60">
+            <p className="text-lg text-athos-gray">
               Get noticed by engaged audiences worldwide
             </p>
           </div>
@@ -155,7 +155,7 @@ export default function LandingPage() {
           <div className="text-center mt-10">
             <button
               onClick={() => router.push('/browse')}
-              className="px-8 py-3 border-2 border-[#FF6B35] text-[#FF6B35] font-semibold rounded-lg hover:bg-[#FF6B35] hover:text-white transition-colors font-[family-name:var(--font-syne)]"
+              className="px-8 py-3 border-2 border-athos-azure text-athos-azure font-semibold rounded-lg hover:bg-athos-azure hover:text-white transition-colors font-[family-name:var(--font-syne)]"
             >
               Browse All Listings →
             </button>
@@ -163,46 +163,46 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF8F5]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1A1A2E] text-center mb-12 font-[family-name:var(--font-playfair)]">
+      {/* How It Works — Athos Wave Divider */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 pattern-athos-waves">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <h2 className="text-3xl font-bold text-athos-navy text-center mb-12 font-[family-name:var(--font-playfair)]">
             How It Works
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#FF6B35]/20 to-[#9B59B6]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+              <div className="w-16 h-16 bg-athos-azure/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🔍</span>
               </div>
-              <h3 className="text-xl font-semibold text-[#1A1A2E] mb-2 font-[family-name:var(--font-dm-sans)]">
+              <h3 className="text-xl font-semibold text-athos-navy mb-2 font-[family-name:var(--font-dm-sans)]">
                 1. Discover
               </h3>
-              <p className="text-[#1A1A2E]/60">
+              <p className="text-athos-gray">
                 Browse listings by region. Filter by platform type, audience size, and budget.
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#FF6B35]/20 to-[#9B59B6]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+              <div className="w-16 h-16 bg-athos-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">📅</span>
               </div>
-              <h3 className="text-xl font-semibold text-[#1A1A2E] mb-2 font-[family-name:var(--font-dm-sans)]">
+              <h3 className="text-xl font-semibold text-athos-navy mb-2 font-[family-name:var(--font-dm-sans)]">
                 2. Book
               </h3>
-              <p className="text-[#1A1A2E]/60">
+              <p className="text-athos-gray">
                 Request a booking with your pitch. Pay securely through Stripe.
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#FF6B35]/20 to-[#9B59B6]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+              <div className="w-16 h-16 bg-athos-emerald/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🎙️</span>
               </div>
-              <h3 className="text-xl font-semibold text-[#1A1A2E] mb-2 font-[family-name:var(--font-dm-sans)]">
+              <h3 className="text-xl font-semibold text-athos-navy mb-2 font-[family-name:var(--font-dm-sans)]">
                 3. Shine
               </h3>
-              <p className="text-[#1A1A2E]/60">
+              <p className="text-athos-gray">
                 Get featured and reach new audiences. Leave a review after your spot.
               </p>
             </div>
@@ -211,8 +211,11 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#9B59B6] to-[#FF6B35]">
-        <div className="max-w-4xl mx-auto text-center text-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-athos-navy relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 pattern-athos-diamonds"></div>
+        </div>
+        <div className="max-w-4xl mx-auto text-center text-white relative z-10">
           <h2 className="text-3xl font-bold mb-4 font-[family-name:var(--font-playfair)]">
             Have a Podcast or Media Platform?
           </h2>
@@ -221,7 +224,7 @@ export default function LandingPage() {
           </p>
           <button
             onClick={() => router.push('/host')}
-            className="px-8 py-3 bg-white text-[#FF6B35] font-semibold rounded-lg hover:bg-[#FFF8F5] transition-colors font-[family-name:var(--font-syne)]"
+            className="px-8 py-3 bg-athos-gold text-athos-navy font-semibold rounded-lg hover:bg-athos-amber transition-colors font-[family-name:var(--font-syne)]"
           >
             Become a Host →
           </button>

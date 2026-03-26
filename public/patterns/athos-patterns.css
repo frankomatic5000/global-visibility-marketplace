@@ -1,0 +1,328 @@
+/**
+ * GVM Brand Template V2 — Athos Bulcão Creative Patterns
+ * Inspired by the iconic tile designs of Athos Bulcão
+ * Modern web interpretation with bold artistic energy
+ * 
+ * Created: 2026-03-26
+ * Project: Global Visibility Marketplace
+ * Version: 2.0 Creative
+ */
+
+/* ========================================
+   COLOR PALETTE — Extracted from Bulcão Tiles
+   ======================================== */
+
+:root {
+  /* Core Blues (from wave and diamond tiles) */
+  --athos-azure: #1E5AA8;
+  --athos-cerulean: #3B82C6;
+  --athos-sky: #60A5FA;
+  --athos-pale-blue: #DBEAFE;
+  --athos-deep-blue: #0F2A4D;
+  --athos-navy: #0A1A2E;
+  
+  /* Warm Accents (from colorful tile variations) */
+  --athos-gold: #F59E0B;
+  --athos-amber: #FBBF24;
+  --athos-mustard: #D97706;
+  --athos-yellow: #FCD34D;
+  --athos-cream: #FEF3C7;
+  
+  /* Earth Tones (from geometric tiles) */
+  --athos-terra: #92400E;
+  --athos-olive: #65A30D;
+  --athos-sage: #84CC16;
+  --athos-emerald: #10B981;
+  --athos-teal: #14B8A6;
+  
+  /* Monochrome (from black/white tiles) */
+  --athos-black: #0A0A0A;
+  --athos-charcoal: #1F2937;
+  --athos-gray: #6B7280;
+  --athos-silver: #9CA3AF;
+  --athos-white: #FAFAFA;
+  --athos-pure-white: #FFFFFF;
+  
+  /* Sunset Velocity Compatibility */
+  --sunset-ember: #F97316;
+  --sunset-dusk: #8B5CF6;
+  --sunset-shadow: #1F2937;
+}
+
+/* ========================================
+   PATTERN 1: ATHOS WAVES
+   Inspired by: Blue/white wave pattern tiles
+   Modern interpretation: Flowing, organic curves
+   ======================================== */
+
+.pattern-athos-waves {
+  background-color: var(--athos-pale-blue);
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 20% 40%, var(--athos-azure) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, var(--athos-cerulean) 0%, transparent 45%),
+    radial-gradient(ellipse 70% 35% at 50% 20%, var(--athos-sky) 0%, transparent 40%),
+    radial-gradient(ellipse 50% 60% at 30% 80%, var(--athos-gold) 0%, transparent 35%);
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.pattern-athos-waves::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      110deg,
+      transparent,
+      transparent 40px,
+      rgba(30, 90, 168, 0.03) 40px,
+      rgba(30, 90, 168, 0.03) 80px
+    );
+  pointer-events: none;
+}
+
+/* Wave variant with gold accents */
+.pattern-athos-waves-gold {
+  background-color: var(--athos-cream);
+  background-image: 
+    radial-gradient(ellipse 70% 30% at 25% 35%, var(--athos-azure) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 45% at 75% 65%, var(--athos-amber) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 25% at 50% 15%, var(--athos-mustard) 0%, transparent 45%),
+    radial-gradient(ellipse 40% 55% at 15% 75%, var(--athos-cerulean) 0%, transparent 40%);
+}
+
+/* ========================================
+   PATTERN 2: ATHOS DIAMONDS
+   Inspired by: Geometric diamonds/triangles in blue/white
+   Modern interpretation: Bold angular geometry
+   ======================================== */
+
+.pattern-athos-diamonds {
+  background-color: var(--athos-pure-white);
+  background-image:
+    conic-gradient(from 45deg at 25% 25%, transparent 0deg, var(--athos-azure) 0deg 90deg, transparent 90deg),
+    conic-gradient(from 225deg at 75% 25%, transparent 0deg, var(--athos-cerulean) 0deg 90deg, transparent 90deg),
+    conic-gradient(from 135deg at 25% 75%, transparent 0deg, var(--athos-sky) 0deg 90deg, transparent 90deg),
+    conic-gradient(from 315deg at 75% 75%, transparent 0deg, var(--athos-gold) 0deg 90deg, transparent 90deg);
+  background-size: 120px 120px;
+  background-position: 0 0;
+}
+
+/* Diamond mesh variant */
+.pattern-athos-diamonds-mesh {
+  background-color: var(--athos-navy);
+  background-image:
+    linear-gradient(45deg, var(--athos-azure) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--athos-azure) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--athos-cerulean) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--athos-cerulean) 75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+}
+
+/* ========================================
+   PATTERN 3: ATHOS RADIATE
+   Inspired by: Circular motifs with radiating lines
+   Modern interpretation: Sunburst energy, dynamic spokes
+   ======================================== */
+
+.pattern-athos-radiate {
+  background-color: var(--athos-pale-blue);
+  background-image:
+    repeating-conic-gradient(
+      from 0deg at 30% 40%,
+      transparent 0deg 15deg,
+      var(--athos-azure) 15deg 18deg,
+      transparent 18deg 30deg
+    );
+  position: relative;
+}
+
+.pattern-athos-radiate::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-conic-gradient(
+      from 180deg at 70% 60%,
+      transparent 0deg 20deg,
+      var(--athos-gold) 20deg 22deg,
+      transparent 22deg 40deg
+    );
+  opacity: 0.7;
+}
+
+/* Multi-center radiate */
+.pattern-athos-radiate-multi {
+  background-color: var(--athos-white);
+  background-image:
+    radial-gradient(circle at 25% 25%, var(--athos-cerulean) 0%, transparent 30%),
+    radial-gradient(circle at 75% 25%, var(--athos-gold) 0%, transparent 25%),
+    radial-gradient(circle at 25% 75%, var(--athos-emerald) 0%, transparent 25%),
+    radial-gradient(circle at 75% 75%, var(--athos-azure) 0%, transparent 30%),
+    repeating-conic-gradient(from 0deg at 25% 25%, transparent 0deg 10deg, rgba(30, 90, 168, 0.1) 10deg 12deg, transparent 12deg 20deg),
+    repeating-conic-gradient(from 45deg at 75% 75%, transparent 0deg 8deg, rgba(245, 158, 11, 0.1) 8deg 10deg, transparent 10deg 16deg);
+}
+
+/* ========================================
+   PATTERN 4: ATHOS PLUS
+   Inspired by: Cross/plus pattern variations
+   Modern interpretation: Interconnected network
+   ======================================== */
+
+.pattern-athos-plus {
+  background-color: var(--athos-pale-blue);
+  background-image:
+    linear-gradient(var(--athos-azure) 4px, transparent 4px),
+    linear-gradient(90deg, var(--athos-azure) 4px, transparent 4px),
+    linear-gradient(var(--athos-cerulean) 2px, transparent 2px),
+    linear-gradient(90deg, var(--athos-cerulean) 2px, transparent 2px);
+  background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
+  background-position: center center;
+}
+
+/* Plus with nodes */
+.pattern-athos-plus-nodes {
+  background-color: var(--athos-navy);
+  background-image:
+    radial-gradient(circle at center, var(--athos-gold) 8px, transparent 8px),
+    linear-gradient(var(--athos-azure) 3px, transparent 3px),
+    linear-gradient(90deg, var(--athos-azure) 3px, transparent 3px);
+  background-size: 60px 60px;
+  background-position: center center;
+}
+
+/* ========================================
+   PATTERN 5: ATHOS GRID
+   Inspired by: Monochrome geometric designs
+   Modern interpretation: Structured elegance
+   ======================================== */
+
+.pattern-athos-grid {
+  background-color: var(--athos-white);
+  background-image:
+    linear-gradient(var(--athos-charcoal) 1px, transparent 1px),
+    linear-gradient(90deg, var(--athos-charcoal) 1px, transparent 1px),
+    linear-gradient(rgba(31, 41, 55, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 41, 55, 0.5) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+}
+
+/* ========================================
+   PATTERN 6: ATHOS MOSAIC
+   Inspired by: Colorful tile variations
+   Modern interpretation: Bold color blocks
+   ======================================== */
+
+.pattern-athos-mosaic {
+  background-color: var(--athos-pale-blue);
+  background-image:
+    linear-gradient(135deg, var(--athos-azure) 25%, transparent 25%),
+    linear-gradient(225deg, var(--athos-gold) 25%, transparent 25%),
+    linear-gradient(45deg, var(--athos-emerald) 25%, transparent 25%),
+    linear-gradient(315deg, var(--athos-cerulean) 25%, transparent 25%);
+  background-size: 80px 80px;
+  background-position: 40px 0, 0 0, 0 40px, 40px 40px;
+}
+
+/* ========================================
+   PATTERN 7: ATHOS FLOW
+   Organic interpretation — flowing energy
+   ======================================== */
+
+.pattern-athos-flow {
+  background-color: var(--athos-cream);
+  background-image:
+    radial-gradient(ellipse 100% 50% at 0% 50%, var(--athos-azure) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 40% at 100% 30%, var(--athos-gold) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 80% at 50% 100%, var(--athos-cerulean) 0%, transparent 45%);
+  background-size: 150% 150%;
+  animation: athosFlow 20s ease-in-out infinite;
+}
+
+@keyframes athosFlow {
+  0%, 100% { background-position: 0% 50%, 100% 50%, 50% 100%; }
+  50% { background-position: 100% 50%, 0% 50%, 50% 0%; }
+}
+
+/* ========================================
+   UTILITIES & COMBINATIONS
+   ======================================== */
+
+.athos-overlay-light {
+  position: relative;
+}
+
+.athos-overlay-light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.9) 100%);
+  pointer-events: none;
+}
+
+.athos-overlay-dark {
+  position: relative;
+}
+
+.athos-overlay-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 26, 46, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Card variants with patterns */
+.athos-card-wave {
+  background: var(--athos-pure-white);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(30, 90, 168, 0.15);
+  overflow: hidden;
+  position: relative;
+}
+
+.athos-card-wave::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: var(--athos-azure);
+  background-image: 
+    radial-gradient(ellipse 100% 100% at 50% 100%, var(--athos-cerulean) 0%, transparent 70%);
+}
+
+.athos-card-diamond {
+  background: var(--athos-pure-white);
+  border-radius: 12px;
+  border: 2px solid var(--athos-azure);
+  position: relative;
+  overflow: hidden;
+}
+
+.athos-card-diamond::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(from 45deg, transparent 0deg, var(--athos-gold) 0deg 90deg, transparent 90deg);
+  opacity: 0.2;
+}
+
+/* Text on patterns */
+.athos-text-on-pattern {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.athos-text-contrast {
+  background: rgba(250, 250, 250, 0.95);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+}

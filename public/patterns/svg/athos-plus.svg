@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <pattern id="plusPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <!-- Horizontal line -->
+      <rect x="0" y="26" width="60" height="8" fill="#1E5AA8"/>
+      <!-- Vertical line -->
+      <rect x="26" y="0" width="8" height="60" fill="#1E5AA8"/>
+      
+      <!-- Center node -->
+      <circle cx="30" cy="30" r="10" fill="#F59E0B"/>
+      
+      <!-- Corner accents -->
+      <rect x="0" y="0" width="12" height="4" fill="#3B82C6" opacity="0.6"/>
+      <rect x="0" y="0" width="4" height="12" fill="#3B82C6" opacity="0.6"/>
+      
+      <rect x="48" y="0" width="12" height="4" fill="#3B82C6" opacity="0.6"/>
+      <rect x="56" y="0" width="4" height="12" fill="#3B82C6" opacity="0.6"/>
+      
+      <rect x="0" y="56" width="12" height="4" fill="#3B82C6" opacity="0.6"/>
+      <rect x="0" y="48" width="4" height="12" fill="#3B82C6" opacity="0.6"/>
+      
+      <rect x="48" y="56" width="12" height="4" fill="#3B82C6" opacity="0.6"/>
+      <rect x="56" y="48" width="4" height="12" fill="#3B82C6" opacity="0.6"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="120" height="120" fill="#DBEAFE"/>
+  
+  <!-- Pattern application -->
+  <rect width="120" height="120" fill="url(#plusPattern)"/>
+</svg>

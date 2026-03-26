@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <pattern id="mosaicPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <!-- Top-left: Blue square -->
+      <rect x="0" y="0" width="38" height="38" fill="#1E5AA8"/>
+      
+      <!-- Top-right: Gold square -->
+      <rect x="42" y="0" width="38" height="38" fill="#F59E0B"/>
+      
+      <!-- Bottom-left: Emerald square -->
+      <rect x="0" y="42" width="38" height="38" fill="#10B981"/>
+      
+      <!-- Bottom-right: Cerulean square -->
+      <rect x="42" y="42" width="38" height="38" fill="#3B82C6"/>
+      
+      <!-- Diamond overlay accents -->
+      <polygon points="19,8 30,19 19,30 8,19" fill="rgba(255,255,255,0.3)"/>
+      <polygon points="61,8 72,19 61,30 50,19" fill="rgba(255,255,255,0.2)"/>
+      <polygon points="19,50 30,61 19,72 8,61" fill="rgba(255,255,255,0.2)"/>
+      <polygon points="61,50 72,61 61,72 50,61" fill="rgba(255,255,255,0.3)"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="240" height="240" fill="#FEF3C7"/>
+  
+  <!-- Pattern -->
+  <rect width="240" height="240" fill="url(#mosaicPattern)"/>
+  
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="80" x2="240" y2="80" stroke="#0A1A2E" stroke-width="1" opacity="0.1"/>
+  <line x1="0" y1="160" x2="240" y2="160" stroke="#0A1A2E" stroke-width="1" opacity="0.1"/>
+  <line x1="80" y1="0" x2="80" y2="240" stroke="#0A1A2E" stroke-width="1" opacity="0.1"/>
+  <line x1="160" y1="0" x2="160" y2="240" stroke="#0A1A2E" stroke-width="1" opacity="0.1"/>
+</svg>
