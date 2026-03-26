@@ -19,10 +19,10 @@ export default function HostProfilePage() {
 
   if (!host) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Host not found</h1>
-          <Link href="/browse" className="text-blue-600 hover:underline">
+          <h1 className="text-2xl font-bold text-athos-navy mb-4">Host not found</h1>
+          <Link href="/browse" className="text-athos-azure hover:underline">
             Back to Browse
           </Link>
         </div>
@@ -31,7 +31,7 @@ export default function HostProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-athos-snow">
+    <div className="min-h-screen bg-white">
       {/* Section Header with Quadrant Grid Pattern */}
       <section className="pattern-section-header border-b border-athos-azure/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">

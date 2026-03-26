@@ -34,17 +34,17 @@ export default function HostPage() {
   };
 
   return (
-    <div className="min-h-screen bg-athos-snow">
+    <div className="min-h-screen bg-white">
       {/* Section Header with Quadrant Grid Pattern */}
       <section className="pattern-section-header border-b border-athos-azure/10 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-header-content text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="text-4xl">🎙️</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-athos-navy font-[family-name:var(--font-playfair)]">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white font-[family-name:var(--font-playfair)]">
             Become a Host
           </h1>
-          <p className="text-athos-charcoal/70 mt-3 max-w-2xl mx-auto">
+          <p className="text-white/80 mt-3 max-w-2xl mx-auto">
             Monetize your podcast by hosting guests from around the world
           </p>
         </div>

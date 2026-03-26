@@ -16,10 +16,10 @@ export interface NearMeFilterProps {
 
 /**
  * Near Me Filter Component
- * Sunset Velocity theme styling:
- * - Filter panel: Warm cream (#FFF8F5) bg
- * - Active radius: Coral (#FF6B35)
- * - Distance badge: Golden (#FFC233)
+ * GVM Athos Brand styling:
+ * - Filter panel: White bg
+ * - Active radius: Navy/midnight (#1A1A2E)
+ * - Text: Navy/midnight consistent with brand
  */
 export default function NearMeFilter({
   selectedRadius,
@@ -75,12 +75,12 @@ export default function NearMeFilter({
   }
 
   return (
-    <div className={`bg-[#FFF8F5] rounded-xl border border-[#FF6B35]/10 p-5 ${className}`}>
+    <div className={`bg-white rounded-xl border border-athos-azure/10 p-5 ${className}`}>
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <MapPin className="w-5 h-5 text-[#FF6B35]" />
-          <h3 className="font-semibold text-[#1A1A2E] font-[family-name:var(--font-dm-sans)]">
+          <MapPin className="w-5 h-5 text-athos-azure" />
+          <h3 className="font-semibold text-athos-navy font-[family-name:var(--font-dm-sans)]">
             Near Me
           </h3>
         </div>
@@ -88,7 +88,7 @@ export default function NearMeFilter({
         {effectiveLocation && (
           <button
             onClick={handleClearLocation}
-            className="text-xs text-[#1A1A2E]/50 hover:text-[#FF6B35] transition-colors flex items-center gap-1"
+            className="text-xs text-athos-navy/50 hover:text-athos-azure transition-colors flex items-center gap-1"
             title="Clear location"
           >
             <X className="w-3 h-3" />
@@ -100,13 +100,13 @@ export default function NearMeFilter({
       {/* Location Status / Action Button */}
       {!effectiveLocation ? (
         <div className="space-y-3">
-          <p className="text-sm text-[#1A1A2E]/60">
+          <p className="text-sm text-athos-navy/60">
             Find listings near your current location
           </p>
           <button
             onClick={handleRequestLocation}
             disabled={isLoading}
-            className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-white border border-[#FF6B35]/20 rounded-lg text-[#FF6B35] hover:bg-[#FF6B35]/5 hover:border-[#FF6B35]/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+            className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-white border border-athos-azure/20 rounded-lg text-athos-azure hover:bg-athos-azure/5 hover:border-athos-azure/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed font-medium"
           >
             {isLoading ? (
               <>
@@ -149,11 +149,11 @@ export default function NearMeFilter({
           {/* Location indicator */}
           <div className="flex items-center gap-2 text-sm">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            <span className="text-[#1A1A2E]/70">
+            <span className="text-athos-navy/70">
               Location active
             </span>
             {hasSavedLocation && (
-              <span className="text-xs text-[#1A1A2E]/40 ml-auto">
+              <span className="text-xs text-athos-navy/40 ml-auto">
                 (saved)
               </span>
             )}
@@ -161,7 +161,7 @@ export default function NearMeFilter({
 
           {/* Radius selector */}
           <div className="space-y-2">
-            <label className="text-sm font-medium text-[#1A1A2E]/70">
+            <label className="text-sm font-medium text-athos-navy/70">
               Distance radius
             </label>
             <div className="flex flex-wrap gap-2">
@@ -171,8 +171,8 @@ export default function NearMeFilter({
                   onClick={() => handleRadiusSelect(option.value)}
                   className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                     selectedRadius === option.value
-                      ? 'bg-[#FF6B35] text-white shadow-sm'
-                      : 'bg-white text-[#1A1A2E]/70 hover:bg-[#FF6B35]/5 border border-[#FF6B35]/10'
+                      ? 'bg-athos-azure text-white shadow-sm'
+                      : 'bg-white text-athos-navy/70 hover:bg-athos-azure/5 border border-athos-azure/10'
                   }`}
                 >
                   {getRadiusLabel(option.value, index)}
@@ -183,7 +183,7 @@ export default function NearMeFilter({
 
           {/* Selected radius indicator */}
           {selectedRadius > 0 && (
-            <div className="text-xs text-[#1A1A2E]/50">
+            <div className="text-xs text-athos-navy/50">
               Showing listings within {formatDistance(selectedRadius, 'km')} of your location
             </div>
           )}

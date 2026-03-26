@@ -40,7 +40,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-athos-snow">
+    <div className="min-h-screen bg-white">
       {/* Hero Section — Athos Quadrant Grid Pattern (modular, geometric, readable) */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 pattern-athos-quadrant-grid">
         <div className="max-w-7xl mx-auto text-center relative z-10">

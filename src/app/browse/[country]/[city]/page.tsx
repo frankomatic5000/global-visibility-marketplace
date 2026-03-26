@@ -57,10 +57,10 @@ export default function CityBrowsePage() {
 
   if (!currentCountry || !currentCity) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Region not found</h1>
-          <Link href="/browse" className="text-blue-600 hover:underline">
+          <h1 className="text-2xl font-bold text-athos-navy mb-4">Region not found</h1>
+          <Link href="/browse" className="text-athos-azure hover:underline">
             Back to Browse
           </Link>
         </div>
@@ -69,7 +69,7 @@ export default function CityBrowsePage() {
   }
 
   return (
-    <div className="min-h-screen bg-athos-snow">
+    <div className="min-h-screen bg-white">
       {/* Section Header with Quadrant Grid Pattern */}
       <section className="pattern-section-header border-b border-athos-azure/10 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-header-content">
@@ -87,18 +87,18 @@ export default function CityBrowsePage() {
       </section>
 
       {/* Breadcrumb */}
-      <div className="bg-white border-b border-athos-azure/10">
+      <div className="bg-athos-snow border-b border-athos-azure/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center text-sm">
-            <Link href="/browse" className="text-gray-500 hover:text-gray-900">
+            <Link href="/browse" className="text-athos-navy/50 hover:text-athos-navy">
               Browse
             </Link>
-            <span className="mx-2 text-gray-400">/</span>
-            <Link href={`/browse/${currentCountry.slug}`} className="text-gray-500 hover:text-gray-900">
+            <span className="mx-2 text-athos-navy/30">/</span>
+            <Link href={`/browse/${currentCountry.slug}`} className="text-athos-navy/50 hover:text-athos-navy">
               {currentCountry.name}
             </Link>
-            <span className="mx-2 text-gray-400">/</span>
-            <span className="text-gray-900 font-medium">{currentCity.name}</span>
+            <span className="mx-2 text-athos-navy/30">/</span>
+            <span className="text-athos-navy font-medium">{currentCity.name}</span>
           </nav>
         </div>
       </div>
@@ -107,18 +107,18 @@ export default function CityBrowsePage() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar Filters */}
           <aside className="lg:w-64 flex-shrink-0">
-            <div className="bg-white rounded-xl shadow-sm p-6 sticky top-24">
-              <h2 className="font-semibold text-gray-900 mb-4">Filters</h2>
+            <div className="bg-white rounded-xl shadow-sm border border-athos-azure/10 p-6 sticky top-24">
+              <h2 className="font-semibold text-athos-navy mb-4">Filters</h2>
 
               {/* Platform Filter */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-athos-navy/70 mb-2">
                   Platform Type
                 </label>
                 <select
                   value={platformFilter}
                   onChange={(e) => setPlatformFilter(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                  className="w-full px-3 py-2 border border-athos-azure/20 rounded-lg bg-white text-athos-navy"
                 >
                   <option value="all">All types</option>
                   <option value="podcast">Podcast</option>
@@ -130,13 +130,13 @@ export default function CityBrowsePage() {
 
               {/* Price Filter */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-athos-navy/70 mb-2">
                   Price Range
                 </label>
                 <select
                   value={priceFilter}
                   onChange={(e) => setPriceFilter(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                  className="w-full px-3 py-2 border border-athos-azure/20 rounded-lg bg-white text-athos-navy"
                 >
                   <option value="all">All prices</option>
                   <option value="under_100">Under $100</option>
@@ -147,13 +147,13 @@ export default function CityBrowsePage() {
 
               {/* Sort */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-athos-navy/70 mb-2">
                   Sort By
                 </label>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                  className="w-full px-3 py-2 border border-athos-azure/20 rounded-lg bg-white text-athos-navy"
                 >
                   <option value="featured">Featured first</option>
                   <option value="newest">Newest</option>
@@ -169,7 +169,7 @@ export default function CityBrowsePage() {
                   setPriceFilter('all');
                   setSortBy('featured');
                 }}
-                className="w-full text-sm text-blue-600 hover:text-blue-700"
+                className="w-full text-sm text-athos-azure hover:text-athos-deep-blue"
               >
                 Clear all filters
               </button>
@@ -180,10 +180,10 @@ export default function CityBrowsePage() {
           <main className="flex-1">
             {/* Header */}
             <div className="mb-6">
-              <h1 className="text-2xl font-bold text-gray-900">
+              <h1 className="text-2xl font-bold text-athos-navy">
                 Listings in {currentCity.name}, {currentCountry.name}
               </h1>
-              <p className="text-gray-600 mt-1">
+              <p className="text-athos-navy/60 mt-1">
                 {filteredListings.length} opportunity{filteredListings.length !== 1 ? 'ies' : ''} found
               </p>
             </div>
@@ -196,14 +196,14 @@ export default function CityBrowsePage() {
                 ))}
               </div>
             ) : (
-              <div className="bg-white rounded-xl shadow-sm p-12 text-center">
-                <p className="text-gray-500 mb-4">No listings match your filters</p>
+              <div className="bg-white rounded-xl shadow-sm border border-athos-azure/10 p-12 text-center">
+                <p className="text-athos-navy/50 mb-4">No listings match your filters</p>
                 <button
                   onClick={() => {
                     setPlatformFilter('all');
                     setPriceFilter('all');
                   }}
-                  className="text-blue-600 hover:text-blue-700"
+                  className="text-athos-azure hover:text-athos-deep-blue"
                 >
                   Clear filters
                 </button>

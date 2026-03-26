@@ -199,8 +199,41 @@ body {
   z-index: 1;
 }
 
-/* Pattern: Section Header with Quadrant Grid — Subtle, for subpage headers */
+/* Pattern: Section Header with BLUE background for subtitle pages */
 .pattern-section-header {
+  background-color: var(--athos-azure);
+  background-image:
+    /* Subtle diagonal lines for texture */
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 255, 255, 0.03) 20px,
+      rgba(255, 255, 255, 0.03) 40px
+    ),
+    /* Subtle radial gradient for depth */
+    radial-gradient(ellipse 80% 50% at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  position: relative;
+}
+
+/* Text protection overlay */
+.pattern-section-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 90, 168, 0.05) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(30, 90, 168, 0.05) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Pattern: Section Header with Quadrant Grid — For host/become-a-host pages */
+.pattern-section-header-quadrant {
   background-color: var(--athos-snow);
   background-image: url('/patterns/svg/athos-hero-quadrant-grid.svg');
   background-size: 400px 300px;
@@ -209,8 +242,7 @@ body {
   position: relative;
 }
 
-/* Multiply blend mode for the pattern */
-.pattern-section-header::before {
+.pattern-section-header-quadrant::before {
   content: '';
   position: absolute;
   inset: 0;
