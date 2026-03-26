@@ -76,6 +76,22 @@ export default function CountryBrowsePage() {
 
   return (
     <div className="min-h-screen bg-[#FFF8F5]">
+      {/* Section Header with Quadrant Grid Pattern */}
+      <section className="pattern-section-header border-b border-athos-azure/10 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-header-content">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-3xl">🌍</span>
+            <span className="text-athos-charcoal/60 font-medium">{currentCountry.name}</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-bold text-athos-navy font-[family-name:var(--font-playfair)]">
+            Opportunities in {currentCountry.name}
+          </h1>
+          <p className="text-athos-charcoal/70 mt-2 max-w-2xl">
+            Find podcasts, events, and media platforms across {cities.length} cities
+          </p>
+        </div>
+      </section>
+
       {/* Breadcrumb */}
       <div className="bg-white border-b border-[#FF6B35]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">

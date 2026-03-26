@@ -199,6 +199,39 @@ body {
   z-index: 1;
 }
 
+/* Pattern: Section Header with Quadrant Grid — Subtle, for subpage headers */
+.pattern-section-header {
+  background-color: var(--athos-snow);
+  background-image: url('/patterns/svg/athos-hero-quadrant-grid.svg');
+  background-size: 400px 300px;
+  background-repeat: repeat;
+  background-position: center;
+  position: relative;
+}
+
+/* Multiply blend mode for the pattern */
+.pattern-section-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 250, 250, 0.4) 0%,
+    rgba(250, 250, 250, 0.15) 30%,
+    rgba(250, 250, 250, 0.15) 70%,
+    rgba(250, 250, 250, 0.4) 100%
+  );
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Additional text protection for content inside section headers */
+.section-header-content {
+  position: relative;
+  z-index: 10;
+}
+
 /* Pattern: Elegant Hero — Soft, subtle, text-readable (Athos-inspired) */
 .pattern-athos-hero-elegant {
   background-color: #FAFBFC;

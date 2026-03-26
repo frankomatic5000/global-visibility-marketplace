@@ -34,38 +34,41 @@ export default function HostPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center space-x-2 mb-6">
-            <span className="text-3xl">🌍</span>
-            <span className="font-bold text-xl text-gray-900">GVM</span>
-          </Link>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Become a Host</h1>
-          <p className="text-gray-600">
+    <div className="min-h-screen bg-athos-snow">
+      {/* Section Header with Quadrant Grid Pattern */}
+      <section className="pattern-section-header border-b border-athos-azure/10 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-header-content text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="text-4xl">🎙️</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-bold text-athos-navy font-[family-name:var(--font-playfair)]">
+            Become a Host
+          </h1>
+          <p className="text-athos-charcoal/70 mt-3 max-w-2xl mx-auto">
             Monetize your podcast by hosting guests from around the world
           </p>
         </div>
+      </section>
 
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Progress indicator */}
         <div className="flex items-center justify-center gap-4 mb-8">
-          <div className={`flex items-center gap-2 ${step >= 1 ? 'text-blue-600' : 'text-gray-400'}`}>
-            <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step >= 1 ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}>
+          <div className={`flex items-center gap-2 ${step >= 1 ? 'text-athos-azure' : 'text-athos-gray'}`}>
+            <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step >= 1 ? 'bg-athos-azure text-white' : 'bg-athos-silver'}`}>
               1
             </span>
             <span className="text-sm font-medium">Profile</span>
           </div>
-          <div className="w-12 h-0.5 bg-gray-200" />
-          <div className={`flex items-center gap-2 ${step >= 2 ? 'text-blue-600' : 'text-gray-400'}`}>
-            <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step >= 2 ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}>
+          <div className="w-12 h-0.5 bg-athos-silver" />
+          <div className={`flex items-center gap-2 ${step >= 2 ? 'text-athos-azure' : 'text-athos-gray'}`}>
+            <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step >= 2 ? 'bg-athos-azure text-white' : 'bg-athos-silver'}`}>
               2
             </span>
             <span className="text-sm font-medium">Podcast</span>
           </div>
-          <div className="w-12 h-0.5 bg-gray-200" />
-          <div className={`flex items-center gap-2 ${step >= 3 ? 'text-blue-600' : 'text-gray-400'}`}>
-            <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step >= 3 ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}>
+          <div className="w-12 h-0.5 bg-athos-silver" />
+          <div className={`flex items-center gap-2 ${step >= 3 ? 'text-athos-azure' : 'text-athos-gray'}`}>
+            <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step >= 3 ? 'bg-athos-azure text-white' : 'bg-athos-silver'}`}>
               3
             </span>
             <span className="text-sm font-medium">Done</span>

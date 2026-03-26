@@ -41,23 +41,47 @@ export default function ListingDetailPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF8F5]">
-      {/* Breadcrumb */}
-      <div className="bg-white border-b border-[#FF6B35]/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <nav className="flex items-center text-sm">
-            <Link href="/browse" className="text-[#1A1A2E]/50 hover:text-[#1A1A2E]">
+    <div className="min-h-screen bg-athos-snow">
+      {/* Section Header with Quadrant Grid Pattern */}
+      <section className="pattern-section-header border-b border-athos-azure/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {/* Breadcrumb */}
+          <nav className="flex items-center text-sm mb-4 section-header-content">
+            <Link href="/browse" className="text-athos-charcoal/60 hover:text-athos-charcoal">
               Browse
             </Link>
-            <span className="mx-2 text-[#1A1A2E]/30">/</span>
-            <Link href={`/browse/${listing.region_id.split('-')[0]}`} className="text-[#1A1A2E]/50 hover:text-[#1A1A2E]">
+            <span className="mx-2 text-athos-charcoal/30">/</span>
+            <Link href={`/browse/${listing.region_id.split('-')[0]}`} className="text-athos-charcoal/60 hover:text-athos-charcoal">
               {location?.country || 'Country'}
             </Link>
-            <span className="mx-2 text-[#1A1A2E]/30">/</span>
-            <span className="text-[#1A1A2E] font-medium truncate">{listing.title}</span>
+            <span className="mx-2 text-athos-charcoal/30">/</span>
+            <span className="text-athos-navy font-medium truncate">{listing.title}</span>
           </nav>
+          
+          <div className="section-header-content">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="px-3 py-1 bg-athos-azure/10 text-athos-azure text-sm font-medium rounded-full">
+                {listing.platform_type}
+              </span>
+              <span className="px-3 py-1 bg-white/80 text-athos-charcoal/70 text-sm rounded-full">
+                {getListingTypeLabel(listing.listing_type)}
+              </span>
+              {listing.is_featured && (
+                <span className="px-3 py-1 bg-athos-gold/20 text-athos-mustard text-sm font-medium rounded-full">
+                  ⭐ Featured
+                </span>
+              )}
+            </div>
+            <h1 className="text-2xl sm:text-3xl font-bold text-athos-navy font-[family-name:var(--font-playfair)]">
+              {listing.title}
+            </h1>
+            <div className="flex items-center text-athos-charcoal/60 mt-3">
+              <span className="mr-2">📍</span>
+              {location ? `${location.city}, ${location.country}` : 'Location TBD'}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

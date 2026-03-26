@@ -31,66 +31,72 @@ export default function HostProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Profile Header */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+    <div className="min-h-screen bg-athos-snow">
+      {/* Section Header with Quadrant Grid Pattern */}
+      <section className="pattern-section-header border-b border-athos-azure/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 section-header-content">
             {/* Avatar */}
             {host.avatar_url ? (
               <img
                 src={host.avatar_url}
                 alt={host.full_name || ''}
-                className="w-24 h-24 rounded-full"
+                className="w-20 h-20 rounded-full border-4 border-white shadow-lg"
               />
             ) : (
-              <div className="w-24 h-24 bg-gray-200 rounded-full" />
+              <div className="w-20 h-20 bg-athos-azure/20 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-3xl">
+                🎙️
+              </div>
             )}
 
             {/* Info */}
             <div className="flex-1">
               <div className="flex items-center gap-3">
-                <h1 className="text-2xl font-bold text-gray-900">
+                <h1 className="text-2xl sm:text-3xl font-bold text-athos-navy font-[family-name:var(--font-playfair)]">
                   {host.full_name || 'Unknown Host'}
                 </h1>
                 {host.is_verified && (
-                  <span className="px-2 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">
+                  <span className="px-3 py-1 bg-athos-azure/10 text-athos-azure text-sm font-medium rounded-full">
                     ✓ Verified
                   </span>
                 )}
               </div>
-              <p className="text-gray-600 mt-1">
+              <p className="text-athos-charcoal/70 mt-1">
                 {host.role === 'host' ? 'Podcast Host' : host.role === 'buyer' ? 'Guest' : 'Host & Guest'}
               </p>
               {host.bio && (
-                <p className="text-gray-700 mt-3 max-w-2xl">{host.bio}</p>
+                <p className="text-athos-charcoal/70 mt-2 max-w-2xl text-sm">{host.bio}</p>
               )}
             </div>
 
             {/* Contact button */}
-            <button className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+            <button className="px-6 py-2.5 bg-white border border-athos-azure/20 text-athos-navy rounded-lg hover:bg-athos-snow transition-colors shadow-sm font-medium">
               Contact Host
             </button>
           </div>
+        </div>
+      </section>
 
-          {/* Tabs */}
-          <div className="flex gap-8 mt-8 border-t pt-4">
+      {/* Tabs Bar */}
+      <div className="bg-white border-b border-athos-azure/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-8 pt-4">
             <button
               onClick={() => setActiveTab('listings')}
-              className={`pb-3 text-sm font-medium transition-colors ${
+              className={`pb-4 text-sm font-medium transition-colors relative ${
                 activeTab === 'listings'
-                  ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-500 hover:text-gray-700'
+                  ? 'text-athos-azure border-b-2 border-athos-azure'
+                  : 'text-athos-charcoal/60 hover:text-athos-charcoal'
               }`}
             >
               Listings ({hostListings.length})
             </button>
             <button
               onClick={() => setActiveTab('about')}
-              className={`pb-3 text-sm font-medium transition-colors ${
+              className={`pb-4 text-sm font-medium transition-colors relative ${
                 activeTab === 'about'
-                  ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-500 hover:text-gray-700'
+                  ? 'text-athos-azure border-b-2 border-athos-azure'
+                  : 'text-athos-charcoal/60 hover:text-athos-charcoal'
               }`}
             >
               About
