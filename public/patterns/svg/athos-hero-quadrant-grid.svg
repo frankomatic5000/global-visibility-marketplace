@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- Brand Colors -->
+    <color id="navy" value="#1A3A5C"/>
+    <color id="green" value="#2D5A3D"/>
+    <color id="cream" value="#FAFAFA"/>
+    
+    <!-- Quarter Circle Shapes -->
+    <!-- Top-right quadrant (quarter circle in top-right corner of square) -->
+    <path id="q-tr" d="M50,0 A50,50 0 0,1 100,50 L100,0 Z"/>
+    
+    <!-- Top-left quadrant -->
+    <path id="q-tl" d="M50,0 A50,50 0 0,0 0,50 L0,0 Z"/>
+    
+    <!-- Bottom-left quadrant -->
+    <path id="q-bl" d="M0,50 A50,50 0 0,0 50,100 L0,100 Z"/>
+    
+    <!-- Bottom-right quadrant -->
+    <path id="q-br" d="M100,50 A50,50 0 0,1 50,100 L100,100 Z"/>
+  </defs>
+  
+  <!-- Cream Background -->
+  <rect width="800" height="600" fill="#FAFAFA"/>
+  
+  <!-- Grid: 8 columns x 6 rows = 48 squares at 100x100px each -->
+  <g opacity="0.15">
+    
+    <!-- Row 1 -->
+    <!-- Empty -->
+    <!-- Square 1,2: Navy TR + Green BL -->
+    <g transform="translate(100,0)">
+      <use href="#q-tr" fill="#1A3A5C"/>
+      <use href="#q-bl" fill="#2D5A3D"/>
+    </g>
+    <!-- Empty -->
+    <!-- Square 1,4: Navy TL -->
+    <g transform="translate(300,0)">
+      <use href="#q-tl" fill="#1A3A5C"/>
+    </g>
+    <!-- Empty -->
+    <!-- Square 1,6: Green BR -->
+    <g transform="translate(500,0)">
+      <use href="#q-br" fill="#2D5A3D"/>
+    </g>
+    <!-- Empty -->
+    <!-- Square 1,8: Navy BL -->
+    <g transform="translate(700,0)">
+      <use href="#q-bl" fill="#1A3A5C"/>
+    </g>
+    
+    <!-- Row 2 -->
+    <!-- Square 2,1: Green TR -->
+    <g transform="translate(0,100)">
+      <use href="#q-tr" fill="#2D5A3D"/>
+    </g>
+    <!-- Empty -->
+    <!-- Square 2,3: Navy BR -->
+    <g transform="translate(200,100)">
+      <use href="#q-br" fill="#1A3A5C"/>
+    </g>
+    <!-- Square 2,4: Green TL + Navy BR -->
+    <g transform="translate(300,100)">
+      <use href="#q-tl" fill="#2D5A3D"/>
+      <use href="#q-br" fill="#1A3A5C"/>
+    </g>
+    <!-- Empty -->
+    <!-- Square 2,6: Navy TR + Green BL -->
+    <g transform="translate(500,100)">
+      <use href="#q-tr" fill="#1A3A5C"/>
+      <use href="#q-bl" fill="#2D5A3D"/>
+    </g>
+    <!-- Empty -->
+    <!-- Empty -->
+    
+    <!-- Row 3 -->
+    <!-- Empty -->
+    <!-- Square 3,2: Navy BR -->
+    <g transform="translate(100,200)">
+      <use href="#q-br" fill="#1A3A5C"/>
+    </g>
+    <!-- Square 3,3: Green TL -->
+    <g transform="translate(200,200)">
+      <use href="#q-tl" fill="#2D5A3D"/>
+    </g>
+    <!-- Empty -->
+    <!-- Square 3,5: Navy TR -->
+    <g transform="translate(400,200)">
+      <use href="#q-tr" fill="#1A3A5C"/>
+    </g>
+    <!-- Empty -->
+    <!-- Square 3,7: Green BR -->
+    <g transform="translate(600,200)">
+      <use href="#q-br" fill="#2D5A3D"/>
+    </g>
+    <!-- Square 3,8: Navy TL + Green BR -->
+    <g transform="translate(700,200)">
+      <use href="#q-tl" fill="#1A3A5C"/>
+      <use href="#q-br" fill="#2D5A3D"/>
+    </g>
+    
+    <!-- Row 4 -->
+    <!-- Square 4,1: Navy BL -->
+    <g transform="translate(0,300)">
+      <use href="#q-bl" fill="#1A3A5C"/>
+    </g>
+    <!-- Empty -->
+    <!-- Empty -->
+    <!-- Square 4,4: Green TR -->
+    <g transform="translate(300,300)">
+      <use href="#q-tr" fill="#2D5A3D"/>
+    </g>
+    <!-- Square 4,5: Navy TL + Green BR -->
+    <g transform="translate(400,300)">
+      <use href="#q-tl" fill="#1A3A5C"/>
+      <use href="#q-br" fill="#2D5A3D"/>
+    </g>
+    <!-- Empty -->
+    <!-- Square 4,7: Navy TR -->
+    <g transform="translate(600,300)">
+      <use href="#q-tr" fill="#1A3A5C"/>
+    </g>
+    <!-- Empty -->
+    
+    <!-- Row 5 -->
+    <!-- Square 5,1: Green BR -->
+    <g transform="translate(0,400)">
+      <use href="#q-br" fill="#2D5A3D"/>
+    </g>
+    <!-- Square 5,2: Navy TL -->
+    <g transform="translate(100,400)">
+      <use href="#q-tl" fill="#1A3A5C"/>
+    </g>
+    <!-- Empty -->
+    <!-- Empty -->
+    <!-- Square 5,5: Green BL -->
+    <g transform="translate(400,400)">
+      <use href="#q-bl" fill="#2D5A3D"/>
+    </g>
+    <!-- Square 5,6: Navy TR + Green BL -->
+    <g transform="translate(500,400)">
+      <use href="#q-tr" fill="#1A3A5C"/>
+      <use href="#q-bl" fill="#2D5A3D"/>
+    </g>
+    <!-- Empty -->
+    <!-- Square 5,8: Navy TL -->
+    <g transform="translate(700,400)">
+      <use href="#q-tl" fill="#1A3A5C"/>
+    </g>
+    
+    <!-- Row 6 -->
+    <!-- Empty -->
+    <!-- Square 6,2: Green BR -->
+    <g transform="translate(100,500)">
+      <use href="#q-br" fill="#2D5A3D"/>
+    </g>
+    <!-- Square 6,3: Navy TR -->
+    <g transform="translate(200,500)">
+      <use href="#q-tr" fill="#1A3A5C"/>
+    </g>
+    <!-- Empty -->
+    <!-- Square 6,5: Navy BL -->
+    <g transform="translate(400,500)">
+      <use href="#q-bl" fill="#1A3A5C"/>
+    </g>
+    <!-- Empty -->
+    <!-- Square 6,7: Green TL + Navy BR -->
+    <g transform="translate(600,500)">
+      <use href="#q-tl" fill="#2D5A3D"/>
+      <use href="#q-br" fill="#1A3A5C"/>
+    </g>
+    <!-- Empty -->
+    
+  </g>
+  
+  <!-- Text readability overlay - subtle gradient from edges -->
+  <defs>
+    <linearGradient id="edgeFade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFAFA;stop-opacity:0.2"/>
+      <stop offset="15%" style="stop-color:#FAFAFA;stop-opacity:0.05"/>
+      <stop offset="85%" style="stop-color:#FAFAFA;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:#FAFAFA;stop-opacity:0.2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#edgeFade)"/>
+</svg>

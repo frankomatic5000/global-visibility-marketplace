@@ -173,6 +173,32 @@ body {
   opacity: 0.7;
 }
 
+/* Pattern: Quadrant Grid — Modular quarter-circle grid with rhythmic asymmetry */
+.pattern-athos-quadrant-grid {
+  background-color: #FAFAFA;
+  background-image: url('/patterns/svg/athos-hero-quadrant-grid.svg');
+  background-size: 800px 600px;
+  background-repeat: repeat;
+  background-position: center;
+  position: relative;
+}
+
+/* Subtle multiply blend for texture effect */
+.pattern-athos-quadrant-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 250, 250, 0.3) 0%,
+    rgba(250, 250, 250, 0.05) 25%,
+    rgba(250, 250, 250, 0.05) 75%,
+    rgba(250, 250, 250, 0.3) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* Pattern: Elegant Hero — Soft, subtle, text-readable (Athos-inspired) */
 .pattern-athos-hero-elegant {
   background-color: #FAFBFC;
